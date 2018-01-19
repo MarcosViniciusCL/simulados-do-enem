@@ -83,9 +83,7 @@ class LogDao {
     }
 
     function buscarLogsPeriodo($dataini,$datafim){
-        $SQL = "SELECT * FROM logsistema JOIN tipodelog 
-                ON (datalog BETWEEN '$dataini' AND '$datafim') 
-                AND logsistema.idacao = tipodelog.idacao";
+        $SQL = "SELECT * FROM logsistema WHERE (datalog BETWEEN '$dataini' AND '$datafim')";
         $banc = Bd::getInstance();
         $abrir = $banc->abrirconexao();
         $result = pg_query($abrir, $SQL);

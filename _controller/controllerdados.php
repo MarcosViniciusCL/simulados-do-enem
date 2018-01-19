@@ -416,5 +416,21 @@ class Controllerdados {
 		$log = new Log($escrever[0], $escrever[1], $escrever[2], $escrever[3], $escrever[4]);
 		return $log;
 	}
+
+	public function buscarLogsFiltro($dataini,$datafim){
+		$logdao = new LogDao();
+		$result = $logdao->buscarLogsPeriodo($dataini,$datafim);
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $log = $this->getLog($escrever);
+            $matriz[$i] = $log;
+            $i++;
+        }
+        return $matriz;
+	}
 }
 ?>
