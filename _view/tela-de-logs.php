@@ -53,7 +53,7 @@
 <div class="col-md-8 col-lg-8 col-sm-8">
     <div class="col-md-8 col-lg-8 col-sm-8"></div>
     <a href="filtrar-logs.php">
-    <button style="background-color: #35cebe" type="button" class="btn btn-default btn-lg">
+    <button style="background-color: #35cebe" type="button" class="btn btn-default">
         Filtrar
     </button>
     </a>
