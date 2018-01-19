@@ -66,13 +66,16 @@
                         <a href="tela-cadastrar-questao-oficial.php">Submeter Questões</a>
                     </li>
                     <li>
-                        <a href="tela-de-feedback.php">Ver Feedbacks</a>
+                        <a href="tela-de-feedback.php">Feedbacks</a>
                     </li>
                     <li>
                         <a href="tela-de-logs.php">Logs do Sistema</a>
                     </li>
                     <li>
                         <a href="tela-de-ajuda.php">Ajuda</a>
+                    </li>
+                    <li>
+                        <a href="tela-de-denuncias.php">Denúncias</a>
                     </li>
                 </ul>
 

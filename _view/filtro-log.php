@@ -6,8 +6,8 @@
  * Time: 13:39
  */
 
-include_once( "../_model/segurancaA.php" );
-require_once ("../_controller/Controllerdados.php");
+include_once("../_model/segurancaA.php");
+require_once("../_controller/controllerdados.php");
 $dataini = $_POST['filtro-data-inicial'];
 $datafim = $_POST['filtro-data-final'];
 $controller = Controllerdados::getInstance();
@@ -31,7 +31,7 @@ error_reporting(0);
     <title> Filtro de Logs </title>
     <link type= "text/css" rel=stylesheet href="../_css/bootstrap3.css">
     <link type= "text/css" rel=stylesheet href="../_css/milligram.min.css">
-    <?php include ('../_view/navbar-adm.php')?>
+    <?php include('../_view/navbar-adm.php') ?>
 
 </head>
 <body>

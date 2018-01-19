@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-4 col-lg-4 col-sm-4"></div>
             <div class="col-md-12">
-                <form class="form-inline form-filtro" method="POST" action="../_controller/filtro-log.php">
+                <form class="form-inline form-filtro" method="POST" action="filtro-log.php">
                     <div class="form-group">
                         <label class="sr-only" for="filtro-data-inicial">Data inicial</label>
                         <input type="date" class="form-control" id="filtro-data-inicial" name="filtro-data-inicial">
