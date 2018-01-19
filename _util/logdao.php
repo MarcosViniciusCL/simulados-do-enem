@@ -68,9 +68,7 @@ class LogDao {
 	}
 
 	function buscarLogs(){
-	    $SQL = "SELECT logsistema.idhistorico, logsistema.idusuario, tipodelog.nome, logsistema.descricao, logsistema.datalog 
-                FROM logsistema,tipodelog 
-                WHERE tipodelog.idacao = logsistema.idacao";
+	    $SQL = "SELECT * FROM logsistema";
         $banc = Bd::getInstance();
         $abrir = $banc->abrirconexao();
         $result = pg_query($abrir, $SQL);
@@ -85,7 +83,19 @@ class LogDao {
     }
 
     function buscarLogsPeriodo($dataini,$datafim){
-        $SQL = "SELECT * FROM logsistema JOIN tipodelog ON (datalog BETWEEN '$dataini' AND '$datafim') AND logsistema.idacao = tipodelog.idacao";
+        $SQL = "SELECT * FROM logsistema JOIN tipodelog 
+                ON (datalog BETWEEN '$dataini' AND '$datafim') 
+                AND logsistema.idacao = tipodelog.idacao";
+        $banc = Bd::getInstance();
+        $abrir = $banc->abrirconexao();
+        $result = pg_query($abrir, $SQL);
+        if(pg_num_rows($result)==0){
+            $banc->fecharconexao();
+            return false;
+        }else{
+            $banc->fecharconexao();
+            return $result;
+        }
     }
 
 }

@@ -7,7 +7,7 @@ class Log {
 	private $descricao;
 
 	public
-	function __construct( $idhistorico, $iduser, $data, $idacao, $descricao ) {
+	function __construct( $idhistorico, $iduser,$descricao, $data, $idacao ) {
 		$this->idhistorico = $idhistorico;
 		$this->iduser = $iduser;
 		$this->data = $data;
@@ -31,7 +31,7 @@ class Log {
 	}
 
 	public
-	function getIdacao() {
+	function getIdAcao() {
 		return $this->idacao;
 	}
 

@@ -15,6 +15,7 @@ require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
 require_once ("../_util/denunciadao.php");
 require_once ("../_model/Denuncia.php");
+require_once ("../_model/Log.php");
 
 class Controllerdados {
 	public static $instance = null;
@@ -381,7 +382,7 @@ class Controllerdados {
 
     }
 
-    public function getDenuncia($escrever){
+    private function getDenuncia($escrever){
         $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
@@ -396,7 +397,24 @@ class Controllerdados {
 	}
 
     public function buscarLog(){
+		$logdao = new LogDao();
+		$result = $logdao->buscarLogs();
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $log = $this->getLog($escrever);
+            $matriz[$i] = $log;
+            $i++;
+        }
+        return $matriz;
+	}
 
+	private function getLog($escrever){
+		$log = new Log($escrever[0], $escrever[1], $escrever[2], $escrever[3], $escrever[4]);
+		return $log;
 	}
 }
 ?>

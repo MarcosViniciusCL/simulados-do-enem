@@ -1,14 +1,12 @@
 <?php
 	include_once( "../_model/segurancaA.php" );
-    require_once ("Controllerdados.php");
-    $nome = $_POST['nome'];
-    $id = $_SESSION['privilegio'];
+    require_once ("../_controller/Controllerdados.php");
     $controller = Controllerdados::getInstance();
-    $result = $controller->buscarUsuarios($nome);
+    $result = $controller->buscarLog();
     $tamanho = count($result);
     //echo $tamanho;
     if($result==false){
-        echo "Erro, usuários com o nome especificado não foram encontrados.";
+        echo "Erro, logs não foram encontrados.";
     }else{
         //echo " ".$id;
     }
@@ -27,7 +25,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2 col-lg-2"></div>
-        <div class="col-md-8 col-lg-8 col-sm-12">
+        <div class="col-md-12 col-lg-12 col-sm-12">
             <div class="table-responsive">
                 <table class="table">
                     <tbody>
@@ -35,23 +33,11 @@
                     $i = 0;
                     while ($i<$tamanho) { ?>
                         <tr>
-                            <td><?php echo "Nome: ".$result[$i]->getNome(); ?> &nbsp;</td>
-                            <td><?php echo "Email: ".$result[$i]->getEmail(); ?> &nbsp;</td>
-                            <td><?php echo "Privilegio: ".$result[$i]->getPrivilegio(); ?> &nbsp;</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button style="background-color: #35cebe" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Opções
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <li><a href="#">Administrador</a></li>
-                                        <li><a href="#">Moderador</a></li>
-                                        <li><a href="#">Usuário Normal</a></li>
-                                        <li><a href="#">Banir</a></li>
-                                    </ul>
-                                </div>
-                            </td>
+                            <td><?php echo "ID Log: ".$result[$i]->getIdHistorico(); ?> &nbsp;</td>
+                            <td><?php echo "ID do Usuário: ".$result[$i]->getIdUser(); ?> &nbsp;</td>
+                            <td><?php echo "Descrição: ".$result[$i]->getDescricao(); ?> &nbsp;</td>
+                            <td><?php echo "Data do Log: ".$result[$i]->getData(); ?> &nbsp;</td>
+                            <td><?php echo "Tipo de Log: ".$result[$i]->getIdAcao(); ?> &nbsp;</td>
                         </tr>
                         <?php $i++;
                     }
@@ -59,9 +45,18 @@
                     <tbody>
                 </table>
             </div>
+
         </div>
         <div class="col-md-2 col-lg-2"></div>
     </div>
+</div>
+<div class="col-md-8 col-lg-8 col-sm-8">
+    <div class="col-md-8 col-lg-8 col-sm-8"></div>
+    <a href="filtrar-logs.php">
+    <button style="background-color: #35cebe" type="button" class="btn btn-default btn-lg">
+        Filtrar
+    </button>
+    </a>
 </div>
 
 </body>
