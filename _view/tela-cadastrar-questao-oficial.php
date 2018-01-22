@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
 	
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
-	<link rel="stylesheet" type="text/css" href="../_css/cadastro.css">
+	<!--<link rel="stylesheet" type="text/css" href="../_css/cadastro.css">-->
 	
 </head>
 <body style="background-color:#606c76">
@@ -40,10 +40,10 @@
 			</div>   
 
 			<div class="col-sm-12 col-md-7 col-lg-7">														
-							
+				<!-- 			
 				<button href="#" onclick="mostraOculta('cadProva','cadQuestao')" >Cadastrar Prova</button>
 				<button href="#" onclick="mostraOculta('cadQuestao','cadProva')" >Cadastrar Questão</button>
-						  
+					-->	  
 			</div> 
 			
 			<div class="col-sm-0 col-md-2 col-lg-7">
