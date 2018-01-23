@@ -40,6 +40,38 @@ require_once( "../_model/Prova.php" );
 		}
 	</script>
 
+    <style>
+        .buttonSimple {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+        }
+
+
+        .buttonSimpleDenunciar {
+            background-color: #ce3938;
+        }
+
+        .buttonSimpleDenunciar:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color: #850005;
+        }
+
+        .buttonSimpleFinaliza:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            size: auto;
+        }
+    </style>
+
 </head>
 <body>
     <?php
@@ -99,8 +131,8 @@ require_once( "../_model/Prova.php" );
 	</div>
 
 	<aside role="complementary" class="col-md-2">
-		<div class="panel panel-primary">
-			<div class="panel-heading" style="font-size: 16px">Cronômetro</div>
+		<div class="painel-elevado">
+            <div style="margin-top: 5px">Cronômetro</div>
 			<div class="panel-body">
 				<div id="contenedor">
 					<div class="reloj" id="horas" >00</div>
@@ -109,22 +141,20 @@ require_once( "../_model/Prova.php" );
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-warning">
-			<div class="panel-heading" style="font-size: 16px">Achou algo errado?</div>
+		<div class="painel-elevado" style="margin-top: 10px">
+			<div style="font-size: 16px">Achou algo errado?</div>
 			<div class="panel-body">
-				<a href="#" style="margin-bottom: 15px" class="btn btn-danger botao" role="button" onclick="denuncia()">Denunciar</a>
+				<button class="buttonSimple buttonSimpleDenunciar" onclick="denuncia()">Denunciar</button>
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading" style="font-size: 16px">Avalie essa questão</div>
+		<div class="painel-elevado" style="margin-top: 10px">
+			<div style="font-size: 16px">Avalie essa questão</div>
 			<div class="panel-body">
 
 			</div>
 		</div>
-		<a href="#" role="button" style="margin-bottom: 15px" class="btn btn-success botaoFinaliza" onclick="enviarSimulado()">Finalizar prova</a>
-
-
+		<button class="buttonSimple buttonSimpleFinaliza botaoFinaliza" style="margin-top: 10px" onclick="enviarSimulado()">Finalizar prova</button>
 	</aside>
 	<footer>
 

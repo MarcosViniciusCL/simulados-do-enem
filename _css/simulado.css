@@ -47,14 +47,9 @@
 }
 
 .botaoFinaliza{
-    width: 170px;
+    width: 130px;
     text-align: center;
     padding: 15px 20px;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    background-color: #71cf94;
-    font-size: 18px;
-    color: white;
 }
 
 .tituloQuestao{
@@ -105,3 +100,6 @@
       position:relative;
       top:1px;
   }
+
+  /*Uns botoes ai*/
+
