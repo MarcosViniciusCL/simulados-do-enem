@@ -8,10 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tela de ajuda</title>
+    <!-- Milligram CSS minified -->
+	<link rel="stylesheet" href="../_css/milligram.min.css">
+	
+	<!-- Main Styles -->
+    <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
     <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
     <link rel="stylesheet" type="text/css" href="../_css/gerencia-conta.css">
 </head>
-<body>
+<body style="background-color:#606c76">
     <div>
      <?php 
      /*Então, aqui deve aparecer um if para saber qual usuário está uzando a página
@@ -28,7 +33,7 @@
 
 <div class="container-fluid">
         <div class="row">
-            <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class=" card col-md-4 col-lg-4 col-sm-12">
 
                 <div class="col-md-10 col-lg-10 col-sm-12">
                     <h3>Dúvidas Frequentes</h3>
@@ -45,7 +50,8 @@
                    
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-sm-12">
+            <div class="col-md-1 col-lg-1"></div>
+            <div class=" card col-md-6 col-lg-6 col-sm-12">
              <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
 
                         <h4 id="item-1">Como fazer um simulado?</h4>
@@ -151,7 +157,7 @@
 
                     </div>
             </div>
-            <div class="col-md-2 col-lg-2 col-sm-12">
+            <div class="col-md-1 col-lg-1 col-sm-12">
 
             </div>
 

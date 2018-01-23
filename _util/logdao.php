@@ -67,5 +67,34 @@ class LogDao {
 		return null;
 	}
 
+	function buscarLogs(){
+	    $SQL = "SELECT * FROM logsistema";
+        $banc = Bd::getInstance();
+        $abrir = $banc->abrirconexao();
+        $result = pg_query($abrir, $SQL);
+        if(pg_num_rows($result)==0){
+            $banc->fecharconexao();
+            return false;
+        }else{
+            $banc->fecharconexao();
+            return $result;
+        }
+
+    }
+
+    function buscarLogsPeriodo($dataini,$datafim){
+        $SQL = "SELECT * FROM logsistema WHERE (datalog BETWEEN '$dataini' AND '$datafim')";
+        $banc = Bd::getInstance();
+        $abrir = $banc->abrirconexao();
+        $result = pg_query($abrir, $SQL);
+        if(pg_num_rows($result)==0){
+            $banc->fecharconexao();
+            return false;
+        }else{
+            $banc->fecharconexao();
+            return $result;
+        }
+    }
+
 }
 ?>

@@ -32,7 +32,8 @@ if($result==false){
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2 col-lg-2"></div>
-        <div class="col-md-8 col-lg-8 col-sm-12">
+        <div class="col-md-2 col-lg-2"></div>
+        <div class="col-md-12 col-lg-12 col-sm-12">
             <div id="table-responsive">
                 <table class="table">
                     <tbody>

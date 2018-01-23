@@ -19,6 +19,7 @@ function mostraOculta(ID, ID2) {
 
 function mostra(TD) {
     document.getElementById(TD).style.display = "none";
+    document.getElementById("botoes").style.display = "none";
 }
 
 function esconde(TD) {

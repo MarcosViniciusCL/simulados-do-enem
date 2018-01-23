@@ -91,7 +91,6 @@ class UserDao {
 	}
 	//SELECT
     function buscar($nome, $id){
-	    $array = null;
 	    $banco = Bd::getInstance();
 	    $banco->abrirconexao();
 	    $sql = null;

@@ -47,11 +47,7 @@
                              <button class="button" type="submit">Enviar</button>                             
                             </div>
                         </form>
-					</div>
-				
-
-		
-                
+					</div>                
             </div>
         </div>
 </body>

@@ -91,11 +91,7 @@
                             </li>
                             <li>
                                 <a href="gerencia-de-conta.php">Minha Conta</a>
-                            </li>
-                           
-                            <li>
-                                <a href="tela-de-banimento.php">Banir Usuário</a>
-                            </li>
+                            </li>                                                     
                             
                             <li>
                                 <a href="../_controller/logout.php">Sair</a>

@@ -1,5 +1,5 @@
 <?php
-	include_once( "../_model/segurancaA.php" );
+	//include_once( "../_model/segurancaA.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -32,7 +32,7 @@
         
 	<div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-lg-3 col-sm-12">
+            <div class=" card col-md-3 col-lg-3 col-sm-12">
 				<h3>Opções de navegação</h3>
 				<div id="list-example" class="list-group">
 					<a class="list-group-item list-group-item-action" href="#item1">Início</a>
@@ -42,10 +42,10 @@
 				</div>                   
         	</div>
             
-            <div class="col-md-9 col-lg-9 col-sm-12">
+            <div  style="background-color:#606c76" class="col-md-9 col-lg-9 col-sm-12">
 				<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
 
-					<div id="item1" class="column page-heading">
+					<div id="item1" class="card">
 						<div class="large-card">
 							<h1>Olá administrador!</h1>
 							<p class="text-large">Nesta página você pode ter acesso aos gráficos e informações 
@@ -55,7 +55,7 @@
 					</div>
 					
 					
-					<h5>Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
+					<h5 style="color:#35cebe">Gráficos de uso do Sistema</h5><a class="anchor" name="graficos"></a>
 					<div id="item2" class="card">
 							<div class="card-title">
 								<h2>Quantidade de Usuários cadastrados</h2>

@@ -25,13 +25,14 @@
 			<link rel="stylesheet" href="../_css/milligram.min.css">
 	
 			<!-- Main Styles -->
-   			<link rel="stylesheet" href="../_css/styles.css">
+			<link rel="stylesheet" href="../_css/tela-inicial-adm.css">		
+	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
 	    	
 		</header>
 
 	</head>
 
-	<body style="background-color:#E4E4E4">	
+	<body  style="background-color:#606c76">	
 
 		<div class="navbar">
         	<?php include('navbar-usuario.php') ?>
@@ -44,7 +45,7 @@
 							<p class="h1 font-weight-bold" style="text-align:center;  margin-top:0px">Ranking</p>
 						</div>
 						<div class="table-responsive" style="margin-top: 15px">
-							<table class="table table-striped table-bordered table-hover table-condensed">
+							<table style="background-color:#E4E4E4" class="table table-striped table-bordered table-hover table-condensed">
 								<thead>
 							    	<tr class="active">
 								      	<th>Nome</th>
@@ -147,7 +148,7 @@
 		<div class="container-fluid">
 			<div class="row" style="height: 230px; padding: 5px">
 				<div class="col-md-12 col-lg-12 col-sm-12" style="margin-bottom: 5px; padding: 5px">
-					<img src="_images/banner.jpg" style="width: 100%; height: 100%">
+					<img src="../_images/banner.jpg" style="width: 100%; height: 100%">
 					</div>					
 				</div>		
 			</div>	

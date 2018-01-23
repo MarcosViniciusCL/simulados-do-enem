@@ -132,7 +132,7 @@ CREATE TABLE logsistema (
   idhistorico SERIAL,
   idusuario INTEGER NOT NULL,
   descricao VARCHAR(400) NOT NULL,
-  data DATE DEFAULT 'now'::text::date NOT NULL,
+  datalog DATE DEFAULT 'now'::text::date NOT NULL,
   idacao INTEGER NOT NULL,
   CONSTRAINT historico_pkey PRIMARY KEY(idhistorico),
   CONSTRAINT historico_fk FOREIGN KEY (idusuario)

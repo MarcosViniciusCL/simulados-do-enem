@@ -14,12 +14,16 @@ insert into tipodelog (idacao, nome) values ('3', 'exclusão de usuário');
 insert into tipodelog (idacao, nome) values ('4', 'banimento de usuário');
 insert into tipodelog (idacao, nome) values ('5', 'submissão de questão');
 insert into tipodelog (idacao, nome) values ('6', 'realização de simulado');
+insert into tipodelog (idacao, nome) values ('7', 'cadastro de prova');
 
 --Cadastro de usuários
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Marcos Vinicius', 'Cruz Lima', 'null', 'marcosviniciuscl@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '11/12/2017');
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Itamar', 'Oliveira Maximo', 'null', 'itamar@gmail.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '07/11/2017');
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Giovana', 'Forninho da Silva', 'null', 'giovana@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '10/12/2017');
 insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Lucas', 'Fada Cardoso', 'null', 'lucas@yahoo.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'N', '11/07/2017');
+insert into usuarios (idusuario, nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('13','Ze', 'de Ferro', 'null', 'zedeferro@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'A', '11/12/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('Maria', 'de Ferro', 'null', 'mariaferro@outlook.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'M', '11/12/2017');
+insert into usuarios (nome, sobrenome, foto, email, senha, privilegio, dataplano) values ('FacoMerda', 'de Erro', 'null', 'facomerda@gmail.com', '$6$rounds=5000$ABCDEFGHIJKLMNOP$XsgN.YoH37CoXellu8iIduHzehiDh/pHSGVBIyFsiedaGvWab3vtYBWUWXhuDbYvAJev5YQCYQ0gFFLax9vSa/', 'B', '11/12/2017');
 
 --Cadastro de simulado
 insert into simulado (idusuario, data_simulado, tempo, pontuacao, tipo) values ('1', '12/11/2017', '03:14:38', '734', '');

@@ -15,6 +15,7 @@ require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
 require_once ("../_util/denunciadao.php");
 require_once ("../_model/Denuncia.php");
+require_once ("../_model/Log.php");
 
 class Controllerdados {
 	public static $instance = null;
@@ -139,6 +140,12 @@ class Controllerdados {
 			} else if ( $linha[ 'privilegio' ] == 'A' ) {
 				echo "usuario adm";
 				header( 'location:../_view/tela-inicial-adm.php' );
+			}else if ( $linha[ 'privilegio' ] == 'B' ){
+				echo "usuario banido";
+				unset( $_SESSION[ 'id' ] );
+				unset( $_SESSION[ 'nome' ] );
+				unset( $_SESSION[ 'privilegio' ] );
+				header( 'location:../_view/erros/userbanido.html' );
 			}
 		} else {
 			echo "erro de senha ou email";
@@ -322,9 +329,6 @@ class Controllerdados {
         return $linha['privilegio'];
     }
 
-    public function addProva() {
-        //Não sei o que fazer aqui por enquanto zZzZz... (Allan)
-    }
 	/**
 	1 - cadastro de usuário
 	2 - promoção de usuário
@@ -332,7 +336,7 @@ class Controllerdados {
 	4 - banimento de usuário
 	5 - submissão de questão
 	6 - realização de simulado
-	7 -
+	7 - inserção de prova oficial
 	*/
 	public function insereLog( $tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
@@ -378,11 +382,55 @@ class Controllerdados {
 
     }
 
-    public function getDenuncia($escrever){
+    private function getDenuncia($escrever){
         $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }
+	
+	public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
+		
+			$dao = new ProvaDao();
+			$dao->inserir( $qtdQuestoes, $ano );
+			echo "\n inserir log aqui \n";
+			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
+	}
 
+    public function buscarLog(){
+		$logdao = new LogDao();
+		$result = $logdao->buscarLogs();
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $log = $this->getLog($escrever);
+            $matriz[$i] = $log;
+            $i++;
+        }
+        return $matriz;
+	}
+
+	private function getLog($escrever){
+		$log = new Log($escrever[0], $escrever[1], $escrever[2], $escrever[3], $escrever[4]);
+		return $log;
+	}
+
+	public function buscarLogsFiltro($dataini,$datafim){
+		$logdao = new LogDao();
+		$result = $logdao->buscarLogsPeriodo($dataini,$datafim);
+        if($result==false){
+            return false;
+        }
+        $matriz = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $log = $this->getLog($escrever);
+            $matriz[$i] = $log;
+            $i++;
+        }
+        return $matriz;
+	}
 }
 ?>
