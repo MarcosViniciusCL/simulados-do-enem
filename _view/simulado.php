@@ -58,7 +58,7 @@ require_once( "../_model/Prova.php" );
 
 
         .buttonSimpleDenunciar {
-            background-color: #ce3938;
+            background-color: #ef3d3c;
         }
 
         .buttonSimpleDenunciar:hover {
@@ -120,7 +120,7 @@ require_once( "../_model/Prova.php" );
 			</ul>
 		</nav>
 
-		<footer class="simulado-indicators" style="margin-top: 70px">
+		<footer class="simulado-indicators" style="margin-top: 10px">
 			<nav>
 				<ol class="indice" id="pagina_questao">
                     <!-- Os componentes dessa lista são criados em tempo de execuçao pelo javascript, isso ocorre pelo
