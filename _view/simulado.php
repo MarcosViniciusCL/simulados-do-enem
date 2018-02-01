@@ -151,8 +151,17 @@ require_once( "../_model/Prova.php" );
 		<div class="painel-elevado" style="margin-top: 10px">
 			<div style="font-size: 16px">Avalie essa questão</div>
 			<div class="panel-body">
-
-			</div>
+					<div class="form-group">
+      					<label for="sel1">Selecione um valor:</label>
+					      <select class="form-control" id="sel1">
+					        <option>1</option>
+					        <option>2</option>
+					        <option>3</option>
+					        <option>4</option>
+					        <option>5</option>
+					      </select>
+  					</div>
+  			</div>				
 		</div>
 		<button class="buttonSimple buttonSimpleFinaliza botaoFinaliza" style="margin-top: 10px" onclick="enviarSimulado()">Finalizar prova</button>
 	</aside>
