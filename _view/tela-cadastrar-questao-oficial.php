@@ -84,7 +84,7 @@
             <div class=" card col-sm-12 col-md-12 col-lg-12">
 				<div class="col-sm-12 col-md-7 col-lg-7">									
 					<form>
-						<textarea class="form-control" id="comments" style="margin-top: 10px" name="Enunciado" placeholder="Digite aqui o texto da questão." rows="7"></textarea>
+						<textarea class="form-control" id="comments" style="margin-top: 10px" name="Enunciado" id="Enunciado" placeholder="Digite aqui o texto da questão." rows="7"></textarea>
 						<h4>Se houver imagem no enunciado da questão, selecione-a usando o botão abaixo:</h4>
 						<input type="file" accept=".jpeg, .png" accept=".png"  class="form-control-file" id="exampleFormControlFile1">
 						<h4>Escreva o texto das alternativas da questão, selecione a alternativa cujo a resposta é a resposta correta da questão! Caso a resposta seja uma imagem, escolha a imagem e selecione a correta! </h4>
