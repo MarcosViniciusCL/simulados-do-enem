@@ -432,5 +432,19 @@ class Controllerdados {
         }
         return $matriz;
 	}
+	
+	public function cadastraQuestao($enunciado, $questaoa, $questaob,$questaoc,$questaod,$questaoe,$questaocorreta,$areaconhecimento,$ano){
+		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
+
+		$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
+
+		$dao = new UserDao();
+		$verifica = $dao->inserir( $user );
+		if ( $verifica == true ) {
+			echo "deu certo";
+		} else {
+			echo "deu errado";
+		}
+	}
 }
 ?>
