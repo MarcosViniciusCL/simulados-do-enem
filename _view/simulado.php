@@ -153,7 +153,7 @@ require_once( "../_model/Prova.php" );
 			<div class="panel-body">
 					<div class="form-group">
       					<label for="sel1">Selecione um valor:</label>
-					      <select class="form-control" id="sel1">
+					      <select class="form-control" onchange="avaliarQuestao(this.value)" id="sel1">
 					        <option>1</option>
 					        <option>2</option>
 					        <option>3</option>

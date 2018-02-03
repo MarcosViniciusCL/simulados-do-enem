@@ -13,6 +13,7 @@ require_once( "../_model/DataHora.php" );
 require_once( "../_util/questaodao.php" );
 require_once( "../_util/simuladodao.php" );
 require_once( "../_util/respostasimuladodao.php" );
+require_once ("../_util/avaliacaodao.php");
 require_once ("../_util/denunciadao.php");
 require_once ("../_model/Denuncia.php");
 require_once ("../_model/Log.php");
@@ -253,6 +254,12 @@ class Controllerdados {
             }
         }
         return $pontuacaoTotal;
+    }
+
+    public function avaliarQuestao($id_usuario, $id_questao, $avaliacao){
+    	$avaliacaoDAO = new AvaliacaoDAO();
+    	$avaliacaoDAO->inserirAvaliacao($id_usuario, $id_questao, $avaliacao);
+    	
     }
 
 

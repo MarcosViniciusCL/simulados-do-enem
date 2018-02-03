@@ -203,6 +203,15 @@ function denuncia(){
   });
 }
 
+function avaliarQuestao(avaliacao) {
+    var idQuest = questoesProva[indexAtual].idQuestao;
+    $.ajax({
+        url: "../_controller/avaliarQuestao.php",
+        type: 'post',
+        data: {idQuestao:idQuest,avaliacao:avaliacao}
+    });
+}
+
 function mapForString(){
     respString = "";
     for(var i=0; i < questoesProva.length; i++){

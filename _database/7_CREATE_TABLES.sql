@@ -68,7 +68,25 @@ CREATE TABLE questao (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     NOT DEFERRABLE
-) ;
+);
+
+CREATE TABLE avaliacaoquestao (
+	idavaliacao SERIAL,
+	idusuario INTEGER,
+	idquestao INTEGER,
+	avaliacao INTEGER,
+	CONSTRAINT PKAvaliacaoQuestao PRIMARY KEY(idavaliacao),
+	CONSTRAINT FKAvaliacaoUsuario FOREIGN KEY(idusuario)
+    	REFERENCES  usuarios(idusuario)
+    	ON DELETE NO ACTION
+    	ON UPDATE NO ACTION
+   		NOT DEFERRABLE,
+   	CONSTRAINT FKAvaliacaoQuestao FOREIGN KEY(idquestao)
+   		REFERENCES questao(idquestao)
+   		ON DELETE NO ACTION
+    	ON UPDATE NO ACTION
+    	NOT DEFERRABLE
+);
 
 CREATE TABLE respostasimulado (
   idrespostasimulado serial,
