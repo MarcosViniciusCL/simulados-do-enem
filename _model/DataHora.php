@@ -10,7 +10,7 @@ class DataHora {
 
     //Retorna a hora do servidor NTP.
     public function getDataHora(){
-        $socket = fsockopen('udp://pool.ntp.br', 123, $err_no, $err_str, 1);
+        /*$socket = fsockopen('udp://pool.ntp.br', 123, $err_no, $err_str, 1);
         if ($socket) {
             if (fwrite($socket, chr(bindec('00'.sprintf('%03d', decbin(3)).'011')).str_repeat(chr(0x0), 39).pack('N', time()).pack("N", 0))) {
                 stream_set_timeout($socket, 1);
@@ -20,7 +20,9 @@ class DataHora {
 
             fclose($socket);
             return (string) $datahora;
-        }
+        }*/
+        $datahora = date('Y-m-d H:i:s');
+        return $datahora;
     }
 }
 ?>
