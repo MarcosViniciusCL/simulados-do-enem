@@ -78,7 +78,18 @@ class Controllerdados {
 
 		}
 	}
-
+    /**
+     * @param $idusuario
+     * @param $idprova
+     * @param $idareaconhecimento
+     * @param $enunciado
+     * @param $questaooficial
+     * @param $respostaa
+     * @param $respostab
+     * @param $respostad
+     * @param $respostae
+     * @param $respostacorreta
+     */
 	//Método usado para cadastrar uma questão não oficial
 	public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
         if($idusuario==null || $idprova==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
@@ -256,13 +267,23 @@ class Controllerdados {
         return $pontuacaoTotal;
     }
 
+    /**
+     * @param $id_usuario
+     * @param $id_questao
+     * @param $avaliacao
+     */
+    //Método resposável por avaliar a questão denunciada
     public function avaliarQuestao($id_usuario, $id_questao, $avaliacao){
     	$avaliacaoDAO = new AvaliacaoDAO();
     	$avaliacaoDAO->inserirAvaliacao($id_usuario, $id_questao, $avaliacao);
     	
     }
 
-
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por transformar um usuário em "moderador"
 	public function promoverModerador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'M', $id );
@@ -274,6 +295,11 @@ class Controllerdados {
         return $linha['privilegio'];
 	}
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método resposável por transformar um usuário em "administrador"
 	public function promoverAdministridador( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
@@ -283,7 +309,11 @@ class Controllerdados {
         $linha = pg_fetch_array($result);
         return $linha['privilegio'];
 	}
-
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por transformar em "normal" o priviçlégio de um usuário
 	public function removerPrivilegio( $id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
@@ -294,6 +324,11 @@ class Controllerdados {
 		return $linha['privilegio'];
 	}
 
+    /**
+     * @param $nome
+     * @return array|bool
+     */
+    //Método responsável por buscar usuários do sistema
 	public function buscarUsuarios($nome){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar($nome, 0);
@@ -316,6 +351,11 @@ class Controllerdados {
         return $usuario;
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por verificar o privilégio de um usuário do sistema
     public function verificarPrivilegio($id){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar(null,$id);

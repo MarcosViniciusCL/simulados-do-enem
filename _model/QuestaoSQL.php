@@ -9,7 +9,10 @@ class QuestaoSQL{
     private $respostaE;
     private $respostaCorreta;
     private $cont;
-    
+
+    /**
+     * QuestaoSQL constructor.
+     */
     public function __construct(){
         $this->nome = "";
         $this->enunciado = "";

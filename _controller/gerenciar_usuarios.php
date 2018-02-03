@@ -24,6 +24,3 @@ if($controller->verificarPrivilegio($id) != $privilegio_MOD AND $controller->ver
     $controller->banirUsuario($id);
 }
 
-//falta implementar banir usuario
-//falta implementar verificar privilegio
-//falta fazer tela com os usuarios buscados
