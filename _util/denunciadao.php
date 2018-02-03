@@ -13,12 +13,23 @@ require_once( "bd.php" );
 
 class denunciadao
 {
+
     private $banc;
+
+    /**
+     * denunciadao constructor.
+     */
     public function __construct() {
 
 
     }
     //CREATE
+
+    /**
+     * @param $denuncia
+     * @return bool
+     */
+    //Método responsável por inserir uma denúncia no banco de dados
     function inserir( $denuncia ) {
 
         $idusuario = $denuncia->getIdUsuario();
@@ -41,6 +52,11 @@ class denunciadao
         }
 
     }
+
+    /**
+     * @return bool|resource
+     */
+    //Método responsável por buscar denúncias no banco de dados
     function buscar(){
         $SQL = "SELECT * FROM denunciaquestao";
         $banco = Bd::getInstance();

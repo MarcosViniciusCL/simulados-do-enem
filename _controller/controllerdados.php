@@ -86,6 +86,7 @@ class Controllerdados {
      * @param $questaooficial
      * @param $respostaa
      * @param $respostab
+     * @param $respostac
      * @param $respostad
      * @param $respostae
      * @param $respostacorreta
