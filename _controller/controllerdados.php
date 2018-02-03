@@ -326,6 +326,11 @@ class Controllerdados {
 	    return $linha['privilegio'];
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por banir usuário do sistema
     public function banirUsuario($id){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'B', $id);
@@ -345,6 +350,13 @@ class Controllerdados {
 	6 - realização de simulado
 	7 - inserção de prova oficial
 	*/
+    /**
+     * @param $tipo
+     * @param $idusuario
+     * @param $descricao
+     * @return bool
+     */
+    //Método responsável por inserir log no sistema
 	public function insereLog( $tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
 		if ( $tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL ) {
@@ -362,6 +374,7 @@ class Controllerdados {
      * @param $idusuario
      * @param $data
      */
+    //Método responsável por inserir uma denúncia no sistema
     public function inserirDenuncia($idquestao,$idusuario,$data){
 	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
     	$denunciadao = new denunciadao();
@@ -372,6 +385,11 @@ class Controllerdados {
 	        return false;
         }
     }
+
+    /**
+     * @return array|bool
+     */
+    //Método responsável por buscar todas as denúncias
     public function buscarDenuncia(){
         $denunciadao = new denunciadao();
         $result = $denunciadao->buscar();
@@ -394,7 +412,13 @@ class Controllerdados {
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }
-	
+
+    /**
+     * @param $qtdQuestoes
+     * @param $idUser
+     * @param $ano
+     */
+    //Método responsável por cadastrar prova oficial
 	public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
 		
 			$dao = new ProvaDao();
@@ -403,6 +427,10 @@ class Controllerdados {
 			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
 	}
 
+    /**
+     * @return array|bool
+     */
+    //Método responsável por buscar todos os logs do sistema
     public function buscarLog(){
 		$logdao = new LogDao();
 		$result = $logdao->buscarLogs();
@@ -424,6 +452,13 @@ class Controllerdados {
 		return $log;
 	}
 
+    /**
+     * @param $dataini
+     * @param $datafim
+     * @return array|bool
+     */
+
+    //Método responsável por fazer a busca de logs do sistema de acordo com a data selecionada
 	public function buscarLogsFiltro($dataini,$datafim){
 		$logdao = new LogDao();
 		$result = $logdao->buscarLogsPeriodo($dataini,$datafim);
@@ -439,7 +474,19 @@ class Controllerdados {
         }
         return $matriz;
 	}
-	
+
+    /**
+     * @param $enunciado
+     * @param $questaoa
+     * @param $questaob
+     * @param $questaoc
+     * @param $questaod
+     * @param $questaoe
+     * @param $questaocorreta
+     * @param $areaconhecimento
+     * @param $ano
+     */
+    //Método responsável pelo cadastro de questão
 	public function cadastraQuestao($enunciado, $questaoa, $questaob,$questaoc,$questaod,$questaoe,$questaocorreta,$areaconhecimento,$ano){
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 
