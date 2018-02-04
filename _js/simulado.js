@@ -4,7 +4,7 @@ var tipoProva = window.location.href;
 indexInicio = tipoProva.indexOf('?');
 substring = tipoProva.substr(indexInicio);
 
-var url = "http://localhost/simulados-do-enem/_controller/solicitarProva.php"+substring;
+var url = "../_controller/solicitarProva.php"+substring;
 
 var idProva;
 var questoesProva;
@@ -53,7 +53,8 @@ function setIndexAtual(indexatual) {
 function apresentarQuestao(index){
 	indexAtual = index;
 	//selectIndex();
-	document.getElementById("enunciado").innerText = questoesProva[index].enunciado;
+	document.getElementById("enunciado").innerText = "";
+    $('#enunciado').append(questoesProva[index].enunciado);
 	$('#respa').parent().children('.alternativa').text(questoesProva[index].respostaA);
 	$('#respb').parent().children('.alternativa').text(questoesProva[index].respostaB);
 	$('#respc').parent().children('.alternativa').text(questoesProva[index].respostaC);
@@ -61,6 +62,7 @@ function apresentarQuestao(index){
 	$('#respe').parent().children('.alternativa').text(questoesProva[index].respostaE);
 
 	carregarMarcacao(); //Carrega a letra marcada na questão
+    //encontrarImagem();
 }
 
 function criarIndices(quant) {
@@ -157,7 +159,7 @@ function enviarSimulado(){
 		type: 'post',
 		data: {idSimulado:idProva,respostas:respostasString,tempo:tempo}
     }).done(function () {
-        alert("Seu simulado foi salvo, você será redirecionado para ver seu acertos e erros.");
+        alert("Seu simulado foi salvo, você será redirecionado para ver seus erros e acertos.");
         irParaPagina("paineldeusuario.php");
     });
 }
@@ -234,4 +236,26 @@ function irParaPagina(url){
 function testeData(menor, maior){
     maior -= 5000;
     return menor < maior;
+}
+
+function encontrarImagem(){
+    var stringEnunciado = questoesProva[indexAtual].enunciado;
+    var indexInicio = -1;
+    var indexFinal = -1;
+
+    indexInicio = stringEnunciado.indexOf("<img");
+    indexFinal = stringEnunciado.indexOf('>')
+
+    var tagImg = stringEnunciado.substr(indexInicio, indexFinal+1);
+    var div = document.getElementById('enunciado');
+    var img = document.createElement('img');
+    
+    indexInicio = tagImg.indexOf("\"");
+    indexFinal = tagImg.lastIndexOf("\"");
+    
+    var url = tagImg.substring(indexInicio+1, indexFinal);
+    console.log(url);
+    img.setAttribute('src', url);
+    img.setAttribute('style', 'width: 20; height: 30; margin: 0px auto; background-repeat: no-repeat;');
+    div.appendChild(img);
 }

@@ -22,7 +22,7 @@ class DataHora {
             return (string) $datahora;
         }*/
         $datahora = date('Y-m-d H:i:s');
-        return $datahora;
+        return (string) $datahora;
     }
 }
 ?>

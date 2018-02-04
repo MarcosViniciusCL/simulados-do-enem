@@ -83,7 +83,6 @@ require_once( "../_model/Prova.php" );
 
 		<div class="painel-elevado"  style="font-size: 16px">
 			<div class="panel-body tituloQuestao"> <div id="enunciado"></div></div>
-
 			<div style="height: 100px">
 
 			</div>

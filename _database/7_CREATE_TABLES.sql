@@ -13,7 +13,7 @@ CREATE TABLE  usuarios (
 CREATE TABLE simulado (
   idsimulado SERIAL,
   idusuario INTEGER NOT NULL,
-  data_simulado DATE NOT NULL,
+  data_simulado TIMESTAMP NOT NULL,
   tempo VARCHAR(8) NOT NULL,
   pontuacao INTEGER NOT NULL,
   tipo VARCHAR(1) NOT NULL,
