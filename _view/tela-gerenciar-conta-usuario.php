@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body style="background-color:#606c76">
 
     <div class="navbar">
         <?php
@@ -30,31 +30,22 @@
     </div>
     <div class="container-fluid">
         <div class="row grid-responsive">
-            <div class="col-sm-3 col-md-3 col-lg-3 ">
+            <div class="col-sm-0 col-md-3 col-lg-3 ">
                 <div id="sidebar" class="column">
-                    <h5>Gerencia de contas</h5>
-                    <ul>
-                        <li>
-                            <a href="#">Início</a>
-                        </li>
-                        <li>
-                            <a href="#charts"> Gráficos</a>
-                        </li>
-                     
-                    </ul>
+                    
                 </div>
             </div>
-
-            <div class="col-sm-5 col-md-5 col-lg-5">
+            
+            <div class=" card col-sm-12 col-md-7 col-lg-7">
+            <br><br><br>
                 <form method="POST" action="../_controller/buscar_usuarios.php">
                     <div class="form-group">
-                        
-                        
-                        <div class="col-sm-9 col-md-9 col-lg-9">                
+                                                
+                        <div class="col-sm-8 col-md-8 col-lg-8">                
                         <input type="text" name="nome" id="nome" required placeholder="Digite o nome do usuário desejado"</label>
                         </div>
                        
-                        <div class="col-sm-3 col-md-3 col-lg-3">                
+                        <div class="col-sm-4 col-md-4 col-lg-4">                
                 
                             <div class="col-sm-6 col-md-6 col-lg-6">                
                                 <button type="submit">Procurar Usuário</button>
@@ -65,9 +56,10 @@
                         </div>
                     </div>
                 </form>
+                <br><br><br><br><br>
                 
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-4">                
+            <div class="col-sm-0 col-md-2 col-lg-2">                
                 
             </div>
 

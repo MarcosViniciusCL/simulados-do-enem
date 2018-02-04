@@ -26,47 +26,53 @@
     <title> Usuários encontrados </title>
     <link type= "text/css" rel=stylesheet href="../_css/bootstrap3.css">
     <link type= "text/css" rel=stylesheet href="../_css/milligram.min.css">
+    <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
     <?php include ('../_view/navbar-adm.php')?>
 
 </head>
-<body>
+<body style="background-color:#606c76">
 <div class="container-fluid">
     <div class="row">
-<div class="col-md-2 col-lg-2"></div>
-<div class="col-md-8 col-lg-8 col-sm-12">
-    <div class="table-responsive">
-        <table class="table">
-            <tbody>
-            <?php
-            $i = 0;
-            while ($i<$tamanho) { ?>
+<div class="col-md-1 col-lg-1"></div>
+
+<div class="col-md-10 col-lg-10 col-sm-12">
+<br><br>
+    <div class=" card col-sm-12 col-md-12 col-lg-12">
+    <br>
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
                 <tr>
-                    <td><?php echo "Nome: ".$result[$i]->getNome(); ?> &nbsp;</td>
-                    <td><?php echo "Email: ".$result[$i]->getEmail(); ?> &nbsp;</td>
-                    <td><?php echo "Privilegio: ".$result[$i]->getPrivilegio(); ?> &nbsp;</td>
-                    <td>
-                        <div class="dropdown">
-                            <button style="background-color: #35cebe" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Opções
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">Administrador</a></li>
-                                <li><a href="#">Moderador</a></li>
-                                <li><a href="#">Usuário Normal</a></li>
-                                <li><a href="#">Banir</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <?php $i++;
-            }
-            ?>
-            <tbody>
-        </table>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Privilégio</th>
+                    </tr>
+                <?php
+                $i = 0;
+                while ($i<$tamanho) { ?>
+                   
+                    <tr>
+                        <td><?php echo $result[$i]->getNome(); ?> &nbsp;</td>
+                        <td><?php echo $result[$i]->getEmail(); ?> &nbsp;</td>
+                        <td><?php echo $result[$i]->getPrivilegio(); ?> &nbsp;</td>
+                        <td>                        
+                            <input name="tipoprivilegio" type="radio">Administrador&nbsp;
+                            <input name="tipoprivilegio" type="radio">Moderador&nbsp;
+                            <input name="tipoprivilegio" type="radio">Usuário&nbsp;
+                            <input name="tipoprivilegio" type="radio">Banir&nbsp;
+                            <button type="submit">Alterar</button>
+                        </td>
+                    </tr>
+                    <?php $i++;
+                }
+                ?>
+                <tbody>
+            </table>
+        </div>
+        <br>
     </div>
 </div>
-<div class="col-md-2 col-lg-2"></div>
+<div class="col-md-1 col-lg-1"></div>
     </div>
 </div>
 
