@@ -55,11 +55,16 @@ function apresentarQuestao(index){
 	//selectIndex();
 	document.getElementById("enunciado").innerText = "";
     $('#enunciado').append(questoesProva[index].enunciado);
-	$('#respa').parent().children('.alternativa').text(questoesProva[index].respostaA);
-	$('#respb').parent().children('.alternativa').text(questoesProva[index].respostaB);
-	$('#respc').parent().children('.alternativa').text(questoesProva[index].respostaC);
-	$('#respd').parent().children('.alternativa').text(questoesProva[index].respostaD);
-	$('#respe').parent().children('.alternativa').text(questoesProva[index].respostaE);
+	$('#respa').parent().children('.alternativa').text("");
+    $('#respa').parent().children('.alternativa').append(questoesProva[index].respostaA);
+	$('#respb').parent().children('.alternativa').text("");
+    $('#respb').parent().children('.alternativa').append(questoesProva[index].respostaB);
+	$('#respc').parent().children('.alternativa').text("");
+    $('#respc').parent().children('.alternativa').append(questoesProva[index].respostaC);
+	$('#respd').parent().children('.alternativa').text("");
+    $('#respd').parent().children('.alternativa').append(questoesProva[index].respostaD);
+	$('#respe').parent().children('.alternativa').text("");
+    $('#respe').parent().children('.alternativa').append(questoesProva[index].respostaE);
 
 	carregarMarcacao(); //Carrega a letra marcada na questão
     //encontrarImagem();
