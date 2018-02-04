@@ -67,6 +67,9 @@
                 <a href="escolher-tipo-simulado.php">Realizar simulado </a>
             </li>
             <li>
+                <a href="tela-cadastrar-questao-nao-oficial.php">Submeter questão</a>
+            </li>
+            <li>
                 <a href="tela-envio-feedback.php">Dar feedbacks</a>
             </li>
             <li>

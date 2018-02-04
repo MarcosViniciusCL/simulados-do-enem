@@ -55,17 +55,7 @@
              <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
 
                         <h4 id="item-1">Como fazer um simulado?</h4>
-                        <p>gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn<br>
-                        gtnwegsfugdfhgjfbgdfgjkdjkvnxjknvjknxcjknvjkn
+                        <p>Para responder um simulado é necessário
                         </p>
 
                         <h4 id="item-2">Como escolher o ano simulado?</h4>
