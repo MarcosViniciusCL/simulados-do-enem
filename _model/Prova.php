@@ -149,7 +149,9 @@ class Prova implements JsonSerializable
         
     }
 
-
+    /**
+     * @return array|mixed
+     */
     public function jsonSerialize() {
         return [
             'idProva' => $this->getId(),

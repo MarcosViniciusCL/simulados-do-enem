@@ -5,7 +5,13 @@ class Feedback{
 	private $iduser;
     private $titulo;
     private $descricao;
-	
+
+    /**
+     * Feedback constructor.
+     * @param $iduser
+     * @param $titulo
+     * @param $descricao
+     */
 	public function __construct($iduser, $titulo, $descricao){
         $this->iduser = $iduser;
         $this->titulo = $titulo;

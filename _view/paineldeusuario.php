@@ -94,7 +94,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 col-lg-6 col-sm-12">
+					<div class="col-md-7 col-lg-7 col-sm-12">
 						<div class="card">
 							<div class="card-title">
 								<h3>Seus acertos e erros por área de conhecimento</h3>
@@ -106,9 +106,7 @@
 							</div>
 						</div>		
 					</div>
-					<div class="col-md-3 col-lg-3 col-sm-12">
-						<input name="botão" type="button" onClick="tela-cadastrar-questao-nao-oficial.php" value="Submeter Uma Questão" style="margin-left: 50px">
-					</div>	
+					
 				</div>
 			</div>	
 

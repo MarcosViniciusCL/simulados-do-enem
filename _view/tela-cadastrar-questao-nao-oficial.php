@@ -1,5 +1,5 @@
 <?php
-	include_once( "../_model/segurancaA.php" );
+	include_once( "../_model/seguranca.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -29,7 +29,7 @@
 </head>
 <body style="background-color:#606c76">
 	<?php 
-	include('navbar-adm.php');
+	include('navbar-usuario.php');
 	?>	
 
 	<div style="background-color:#606c76" id="cadQuestao" style="margin-top:-20px" class="container-fluid card">			  
@@ -160,31 +160,7 @@
 		</div>
 	</div>
 
-	<div style="background-color:#606c76" id="cadProva" style="margin-top:-20px" class="container-fluid card">			  
-	 	<div style="margin-top:10px" class="row">  
-			<div class="col-sm-0 col-md-3 col-lg-7">
-
-			</div>   
-			<div class="col-sm-12 col-md-7 col-lg-7 card">
-				<form>
-					<div class="form-group">
-						<h4>Escolha uma prova para submeter</h4><br>						
-						<input type="file" accept=".txt"  class="form-control-file" id="exampleFormControlFile1">
-						<br><br><br><br><br>
-						<h4>Escolha o ano da prova que deseja cadastrar</h4>
-						<input type="number" name="points" min="1995" max="2017" step="1" value="2017">	
-																
-						<br><br><br><br><br>			
-						<button class="button">Enviar Prova</button>
-						<button class="button">Cancelar Envio</button>	
-					</div>
-				</form>
-			</div> 
-			<div class="col-sm-0 col-md-2 col-lg-7">
-
-			</div>       
-		</div>
-	</div>
+	
 
 	<script type="text/javascript" src="../_js/script.js"></script>
 	<script language="JavaScript" src="../_js/popper.min.js"></script>

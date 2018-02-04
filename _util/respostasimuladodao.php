@@ -8,6 +8,10 @@ class RespostaSimuladoDAO {
     public function __construct(){
     }
 
+    /**
+     * @param $id_simulado
+     * @param $vector_resp
+     */
     public function inserir($id_simulado, $vector_resp){
          $banc = Bd::getInstance();
          $obanco = $banc->abrirconexao();

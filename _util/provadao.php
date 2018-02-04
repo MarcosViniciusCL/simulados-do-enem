@@ -11,6 +11,13 @@ class ProvaDao {
 	}
 
 	//CREATE
+
+    /**
+     * @param $qtdquestoes
+     * @param $ano
+     * @return bool
+     */
+    //Método responsável por inserir uma prova no banco de dados
 	function inserir( $qtdquestoes, $ano ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 

@@ -18,15 +18,30 @@ require_once ("../_util/denunciadao.php");
 require_once ("../_model/Denuncia.php");
 require_once ("../_model/Log.php");
 
+/**
+ * Class Controllerdados
+ */
 class Controllerdados {
-	public static $instance = null;
-	private $user;
+    /**
+     * @var null
+     */
+    public static $instance = null;
+    /**
+     * @var
+     */
+    private $user;
 
-	private	function __construct() {
+    /**
+     * Controllerdados constructor.
+     */
+    private	function __construct() {
 
 	}
 
-	public static
+    /**
+     * @return Controllerdados|null
+     */
+    public static
 	function getInstance() {
 		if ( self::$instance == NULL ) {
 			self::$instance = new Controllerdados();
@@ -34,11 +49,20 @@ class Controllerdados {
 		return self::$instance;
 	}
 
-	public static function zeraSingleton() {
+    /**
+     *
+     */
+    public static function zeraSingleton() {
 		self::$instance = new Controllerdados();
 	}
 
-	public function cadastraUsuario( $nome, $email, $senha, $confirmSenha ) {
+    /**
+     * @param $nome
+     * @param $email
+     * @param $senha
+     * @param $confirmSenha
+     */
+    public function cadastraUsuario($nome, $email, $senha, $confirmSenha ) {
 
 		if ( $senha != $confirmSenha ) {
 			echo "Saia daqui";
@@ -62,7 +86,12 @@ class Controllerdados {
 		}
 	}
 
-	public function cadastraFeedback($iduser, $descricao, $titulo){
+    /**
+     * @param $iduser
+     * @param $descricao
+     * @param $titulo
+     */
+    public function cadastraFeedback($iduser, $descricao, $titulo){
 		if ( $descricao == null || $titulo == null || $descricao == "" ) {
 			echo "Saia daqui do cadastra feedback";
 		} else {
@@ -78,9 +107,34 @@ class Controllerdados {
 
 		}
 	}
-
+    /**
+     * @param $idusuario
+     * @param $idprova
+     * @param $idareaconhecimento
+     * @param $enunciado
+     * @param $questaooficial
+     * @param $respostaa
+     * @param $respostab
+     * @param $respostac
+     * @param $respostad
+     * @param $respostae
+     * @param $respostacorreta
+     */
 	//Método usado para cadastrar uma questão não oficial
-	public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
+    /**
+     * @param $idusuario
+     * @param $idprova
+     * @param $idareaconhecimento
+     * @param $enunciado
+     * @param $questaooficial
+     * @param $respostaa
+     * @param $respostab
+     * @param $respostac
+     * @param $respostad
+     * @param $respostae
+     * @param $respostacorreta
+     */
+    public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
         if($idusuario==null || $idprova==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
             $respostaa==null || $respostab==null || $respostac==null || $respostad==null || $respostae==null || $respostacorreta==null){
 
@@ -155,7 +209,10 @@ class Controllerdados {
 		//header( 'location:errologin.html' );
 	}
 
-	public function realizalogout() {
+    /**
+     *
+     */
+    public function realizalogout() {
 		if ( !isset( $_SESSION ) ) {
 			session_start();
 		}
@@ -171,7 +228,14 @@ class Controllerdados {
 	}
 
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
-	public function gerarProva($tipo_prova, $ano_or_area, $quant_quest) {
+
+    /**
+     * @param $tipo_prova
+     * @param $ano_or_area
+     * @param $quant_quest
+     * @return null|Prova
+     */
+    public function gerarProva($tipo_prova, $ano_or_area, $quant_quest) {
 		$questaodao = new QuestaoDAO();
 		$simuladodao = new SimuladoDAO();
 		$respostasimuladodao = new RespostaSimuladoDAO();
@@ -196,7 +260,12 @@ class Controllerdados {
         }
 	}
 
-	public function finalizarSimulado($id_simulado,$resposta_questoes, $tempo){
+    /**
+     * @param $id_simulado
+     * @param $resposta_questoes
+     * @param $tempo
+     */
+    public function finalizarSimulado($id_simulado, $resposta_questoes, $tempo){
         $vectorResp = explode(',',$resposta_questoes);
         $resp_simdao = new RespostaSimuladoDAO();
         $resp_simdao->atualizarVetor($id_simulado, $vectorResp);
@@ -207,6 +276,10 @@ class Controllerdados {
         $simuladodao->atualizar($simulado);
     }
 
+    /**
+     * @param $id_usuario
+     * @return null|Prova
+     */
     public function verificarSimuladoAndamento($id_usuario){
         //return null;
 	    $simuladodao = new SimuladoDAO();
@@ -227,16 +300,28 @@ class Controllerdados {
         return null;
     }
 
+    /**
+     * @param $idQuetao
+     * @param $resposta
+     * @param $idSimulado
+     */
     public function atualizaResposta($idQuetao, $resposta, $idSimulado){
         $resp_simdao = new RespostaSimuladoDAO();
         $resp_simdao->atualizar($idQuetao,$resposta,$idSimulado);
     }
 
+    /**
+     * @param $idSimulado
+     */
     public function obterRespostasQuestoes($idSimulado){
         $resp_simdao = new RespostaSimuladoDAO();
         return $resp_simdao->obterRepostaQuestoes($idSimulado);
     }
 
+    /**
+     * @param $resp
+     * @return int
+     */
     private function gerarPontuacao($resp){
         $questaodao = new QuestaoDAO();
         $valorPontuacao = 1;
@@ -256,14 +341,33 @@ class Controllerdados {
         return $pontuacaoTotal;
     }
 
+    /**
+     * @param $id_usuario
+     * @param $id_questao
+     * @param $avaliacao
+     */
+    //Método resposável por avaliar a questão denunciada
+    /**
+     * @param $id_usuario
+     * @param $id_questao
+     * @param $avaliacao
+     */
     public function avaliarQuestao($id_usuario, $id_questao, $avaliacao){
     	$avaliacaoDAO = new AvaliacaoDAO();
     	$avaliacaoDAO->inserirAvaliacao($id_usuario, $id_questao, $avaliacao);
     	
     }
 
-
-	public function promoverModerador( $id ) {
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por transformar um usuário em "moderador"
+    /**
+     * @param $id
+     * @return bool
+     */
+    public function promoverModerador($id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'M', $id );
         if($result==false){
@@ -274,7 +378,16 @@ class Controllerdados {
         return $linha['privilegio'];
 	}
 
-	public function promoverAdministridador( $id ) {
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método resposável por transformar um usuário em "administrador"
+    /**
+     * @param $id
+     * @return bool
+     */
+    public function promoverAdministridador($id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'A', $id );
         if($result==false){
@@ -283,8 +396,16 @@ class Controllerdados {
         $linha = pg_fetch_array($result);
         return $linha['privilegio'];
 	}
-
-	public function removerPrivilegio( $id ) {
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por transformar em "normal" o priviçlégio de um usuário
+    /**
+     * @param $id
+     * @return bool
+     */
+    public function removerPrivilegio($id ) {
 		$userdao = new UserDao();
 		$result = $userdao->atualizar( 'privilegio', 'N', $id );
 		if($result==false){
@@ -294,7 +415,16 @@ class Controllerdados {
 		return $linha['privilegio'];
 	}
 
-	public function buscarUsuarios($nome){
+    /**
+     * @param $nome
+     * @return array|bool
+     */
+    //Método responsável por buscar usuários do sistema
+    /**
+     * @param $nome
+     * @return array|bool
+     */
+    public function buscarUsuarios($nome){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar($nome, 0);
 	    if($result==false){
@@ -310,12 +440,25 @@ class Controllerdados {
 	    return $matriz;
     }
 
+    /**
+     * @param $escrever
+     * @return Usuario
+     */
     private function getUsuario($escrever){
         $usuario = new Usuario( $escrever[1], null, null, $escrever[2],null, $escrever[3], null );
         $usuario->setId($escrever[0]);
         return $usuario;
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por verificar o privilégio de um usuário do sistema
+    /**
+     * @param $id
+     * @return bool
+     */
     public function verificarPrivilegio($id){
 	    $userdao = new UserDao();
 	    $result = $userdao->buscar(null,$id);
@@ -326,6 +469,15 @@ class Controllerdados {
 	    return $linha['privilegio'];
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
+    //Método responsável por banir usuário do sistema
+    /**
+     * @param $id
+     * @return bool
+     */
     public function banirUsuario($id){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', 'B', $id);
@@ -345,7 +497,20 @@ class Controllerdados {
 	6 - realização de simulado
 	7 - inserção de prova oficial
 	*/
-	public function insereLog( $tipo, $idusuario, $descricao ) {
+    /**
+     * @param $tipo
+     * @param $idusuario
+     * @param $descricao
+     * @return bool
+     */
+    //Método responsável por inserir log no sistema
+    /**
+     * @param $tipo
+     * @param $idusuario
+     * @param $descricao
+     * @return bool
+     */
+    public function insereLog($tipo, $idusuario, $descricao ) {
 		echo "---nova inserção de log os dados são: " . $tipo . " | " . $idusuario . " | " . $descricao;
 		if ( $tipo > 0 && $tipo < 8 || $descricao != "" || $descricao != NULL ) {
 			$dao = new LogDao();
@@ -362,7 +527,14 @@ class Controllerdados {
      * @param $idusuario
      * @param $data
      */
-    public function inserirDenuncia($idquestao,$idusuario,$data){
+    //Método responsável por inserir uma denúncia no sistema
+    /**
+     * @param $idquestao
+     * @param $idusuario
+     * @param $data
+     * @return bool
+     */
+    public function inserirDenuncia($idquestao, $idusuario, $data){
 	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
     	$denunciadao = new denunciadao();
 	    $result = $denunciadao->inserir($denuncia);
@@ -372,6 +544,14 @@ class Controllerdados {
 	        return false;
         }
     }
+
+    /**
+     * @return array|bool
+     */
+    //Método responsável por buscar todas as denúncias
+    /**
+     * @return array|bool
+     */
     public function buscarDenuncia(){
         $denunciadao = new denunciadao();
         $result = $denunciadao->buscar();
@@ -389,13 +569,28 @@ class Controllerdados {
 
     }
 
+    /**
+     * @param $escrever
+     * @return Denuncia
+     */
     private function getDenuncia($escrever){
         $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }
-	
-	public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
+
+    /**
+     * @param $qtdQuestoes
+     * @param $idUser
+     * @param $ano
+     */
+    //Método responsável por cadastrar prova oficial
+    /**
+     * @param $qtdQuestoes
+     * @param $idUser
+     * @param $ano
+     */
+    public function cadastraProvaOficial($qtdQuestoes, $idUser, $ano){
 		
 			$dao = new ProvaDao();
 			$dao->inserir( $qtdQuestoes, $ano );
@@ -403,6 +598,13 @@ class Controllerdados {
 			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
 	}
 
+    /**
+     * @return array|bool
+     */
+    //Método responsável por buscar todos os logs do sistema
+    /**
+     * @return array|bool
+     */
     public function buscarLog(){
 		$logdao = new LogDao();
 		$result = $logdao->buscarLogs();
@@ -419,12 +621,28 @@ class Controllerdados {
         return $matriz;
 	}
 
-	private function getLog($escrever){
+    /**
+     * @param $escrever
+     * @return Log
+     */
+    private function getLog($escrever){
 		$log = new Log($escrever[0], $escrever[1], $escrever[2], $escrever[3], $escrever[4]);
 		return $log;
 	}
 
-	public function buscarLogsFiltro($dataini,$datafim){
+    /**
+     * @param $dataini
+     * @param $datafim
+     * @return array|bool
+     */
+
+    //Método responsável por fazer a busca de logs do sistema de acordo com a data selecionada
+    /**
+     * @param $dataini
+     * @param $datafim
+     * @return array|bool
+     */
+    public function buscarLogsFiltro($dataini, $datafim){
 		$logdao = new LogDao();
 		$result = $logdao->buscarLogsPeriodo($dataini,$datafim);
         if($result==false){
@@ -439,9 +657,33 @@ class Controllerdados {
         }
         return $matriz;
 	}
-	
-	public function cadastraQuestao($enunciado, $questaoa, $questaob,$questaoc,$questaod,$questaoe,$questaocorreta,$areaconhecimento,$ano){
-		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
+
+    /**
+     * @param $enunciado
+     * @param $questaoa
+     * @param $questaob
+     * @param $questaoc
+     * @param $questaod
+     * @param $questaoe
+     * @param $questaocorreta
+     * @param $areaconhecimento
+     * @param $ano
+     */
+    //Método responsável pelo cadastro de questão
+    /**
+     * @param $enunciado
+     * @param $questaoa
+     * @param $questaob
+     * @param $questaoc
+     * @param $questaod
+     * @param $questaoe
+     * @param $questaocorreta
+     * @param $areaconhecimento
+     * @param $ano
+     */
+    public function cadastraQuestao($enunciado, $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta, $areaconhecimento, $ano){
+		$senha =""; $email = "";
+    	$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 
 		$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
 
