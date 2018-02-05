@@ -22,8 +22,8 @@ class UserDao {
 		$Resultado = pg_query($this -> conectar(), $SQL); 
         pg_close($this -> conectar()); */
         
-        echo get_class($user);
-        echo $user->getNome();
+        //echo get_class($user);
+        //echo $user->getNome();
         $nome = $user->getNome();
         $email= $user->getEmail();
         $senha= $user->getSenha();
@@ -35,7 +35,7 @@ class UserDao {
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
         
-        $result = pg_query( $obanco, $SQL );
+        $result = @pg_query( $obanco, $SQL );
 		if ($result != false  ) {
 			echo "Cadastrado com sucesso!";
 			$banc->fecharconexao();

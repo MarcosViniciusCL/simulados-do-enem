@@ -22,8 +22,7 @@ if ($senha != "" || $senha != null || $login != null || $login != ""){
 	
 	$controller = Controllerdados::getInstance();
 	$controller->realizalogin($login, $senha , 0);
-	
-	
+
 }else{
 	echo "erro de login";
     //header('location:../index.html');
