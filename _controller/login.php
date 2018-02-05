@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * User: Alisson
+ * Date: 05/02/2018
+ * Time: 15:15
+ */
+ 
 //arquivo de login
 // session_start inicia a sessão
 if(!isset($_SESSION)){

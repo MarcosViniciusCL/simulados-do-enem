@@ -149,6 +149,11 @@ class Controllerdados {
 	1 - primeiro login
 	null ou 0 - login comum
 	*/
+    /**
+     * @param email
+     * @param senha
+     * @param protolo
+     */
 	public function realizalogin( $email, $senha, $protocolo ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
 		echo " a senha é " . $senhaCrip;
@@ -422,7 +427,6 @@ class Controllerdados {
         return $usuario;
     }
 
-
     /**
      * Método responsável por verificar o privilégio de um usuário do sistema
      * @param $id
@@ -637,6 +641,12 @@ class Controllerdados {
 			echo "deu errado";
 		}
     }
+
+    /**
+     * @param id
+     * @param data
+     * @return resultado
+     */
     public function buscarPontuacao($id, $data){
         $dao = new UserDao();
         $resultado = $dao->buscarPontuacao($id, $data);

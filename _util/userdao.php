@@ -14,7 +14,9 @@ class UserDao {
         
 	}
 
-	//CREATE
+	/**
+     * @param user
+     */
 	function inserir( $user ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
@@ -47,7 +49,12 @@ class UserDao {
 
 	}
 
-	//UPDATE
+	/**
+     * @param atributo
+     * @param acao
+     * @param id
+     * @return resultado
+     */
 	function atualizar($atributo,$acao,$id) {
         $banc = Bd::getInstance();
         $banc->abrirconexao();
@@ -60,7 +67,10 @@ class UserDao {
 		return $resultado;
 	}
 
-	//READ
+	/**
+     * @param email
+     * @param senha
+     */
 	function ler( $email, $senha ) {
 		$banc = Bd::getInstance();
 		$banc->abrirconexao();
@@ -82,14 +92,22 @@ class UserDao {
 		return null;
 	}
 
-	//DELETE
+	/**
+     * @param SQL
+     * @return Resultado
+     */
 	function apagar( $SQL ) {
 		$banco = $this->conectar();
 		$Resultado = pg_query( $this->conectar(), $SQL );
 		pg_close( $this->conectar() );
 		return $Resultado;
 	}
-	//SELECT
+	
+	/**
+     * @param nome
+     * @param id
+     * @return result
+     */
     function buscar($nome, $id){
 	    $banco = Bd::getInstance();
 	    $banco->abrirconexao();
@@ -109,6 +127,12 @@ class UserDao {
         }
 
 	}
+
+	/**
+     * @param id
+     * @param data
+     * @return result
+     */
 	function buscarPontuacao($id, $data){
 		$banco = Bd::getInstance();
 	    $banco->abrirconexao();

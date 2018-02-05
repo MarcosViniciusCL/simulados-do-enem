@@ -8,6 +8,10 @@ class SimuladoDAO{
     public function __construct(){
     }
 
+    /**
+     * @param simulado
+     * @return simulado
+     */
     public function inserir($simulado){
         $idusuario = $simulado->getIdUsuario();
         $data_simulado =  $simulado->getDataSimulado();
@@ -27,7 +31,10 @@ class SimuladoDAO{
         //$simuladoBD = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
         return $simulado;
     }
-
+/**
+     * @param id_simulado
+     * @return simulado
+     */
     public function ler($id_simulado){
         $sql = "select * from simulado where idsimulado = '$id_simulado' limit 1";
         $banc = Bd::getInstance();
@@ -41,6 +48,10 @@ class SimuladoDAO{
         return $simulado;
     }
 
+    /**
+     * @param id_usuario
+     * @return simulado
+     */
     public function lerIdUsuario($id_usuario){
         $banc = Bd::getInstance();
         $banc->abrirconexao();
@@ -54,7 +65,10 @@ class SimuladoDAO{
         $banc->fecharconexao();
         return $simulados;
     }
-
+      /**
+     * @param simulado
+     * @return simulado
+     */
     public function atualizar($simulado){
         $id = $simulado->getIdSimulado();
         $tempoNovo = (string) $simulado->getTempo();
