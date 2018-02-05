@@ -74,14 +74,14 @@ class Controllerdados {
 
 			$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
 
-			$dao = new UserDao();
+            $dao = new UserDao();
 			$verifica = $dao->inserir( $user );
 			if ( $verifica == true ) {
-				echo "deu certo";
+                echo ("<script>alert('Cadastrado realizado com sucesso!!');</script>");
+                $this->realizalogin( $email, $senha, 1 );
 			} else {
-				echo "deu errado";
+                echo ("<script>alert('Email já cadastrado'); location.href='../index.html';</script>");
 			}
-			$this->realizalogin( $email, $senha, 1 );
 
 		}
 	}
@@ -151,7 +151,7 @@ class Controllerdados {
 	*/
 	public function realizalogin( $email, $senha, $protocolo ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
-		echo " a senha é " . $senhaCrip;
+		//echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
 		$resultado = $userdao->ler( $email, $senhaCrip );
 
@@ -192,7 +192,7 @@ class Controllerdados {
 				header( 'location:../_view/erros/userbanido.html' );
 			}
 		} else {
-			echo "erro de senha ou email";
+			echo ("<script>alert('Falha no login. Verifique o email e/ou a senha!!'); location.href='../index.html';</script>");
 		}
 		//echo "erro";
 		//header( 'location:errologin.html' );
