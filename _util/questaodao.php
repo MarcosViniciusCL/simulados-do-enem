@@ -4,16 +4,19 @@ require_once( "../_model/Questao.php" );
 	* 
 	*/
 	class QuestaoDAO {
-		
-		public function __construct(){
+
+        /**
+         * QuestaoDAO constructor.
+         */
+        public function __construct(){
 			# code...
 		}
 
         /**
+		 * Método responsável por inserir uma questão no banco de dados
          * @param $questao
          * @return bool
          */
-        //Método responsável por inserir uma questão no banco de dados
 		public function inserir($questao){
 			echo get_class($questao);
 			$idusuario = $this->idusuario;
@@ -45,13 +48,13 @@ require_once( "../_model/Questao.php" );
 			}
 		}
         /**
+		 * Método responsável por ler questões do banco de dados
+		 * OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
          * @param $tipo_prova
          * @param $ano_or_area
          * @param $quant_quest
          * @return array
          */
-		//Método responsável por ler questões do banco de dados
-        //OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
 		public function ler($tipo_prova, $ano_or_area, $quant_quest){
 			if($tipo_prova == 1) { //Edições anteriores
                 $sql = "select * from (questao join prova on questao.idprova = prova.idprova) where prova.ano = $ano_or_area limit $quant_quest";
@@ -79,10 +82,11 @@ require_once( "../_model/Questao.php" );
         }
 
         /**
+		 * Método responsável por ler questões através de um vetor com índices
          * @param $vetor_id_questoes
          * @return array
          */
-        //Método responsável por ler questões através de um vetor com índices
+
         public function lerPorVetorIndex($vetor_id_questoes){
             $banc = Bd::getInstance();
             $banc->abrirconexao();
@@ -98,10 +102,10 @@ require_once( "../_model/Questao.php" );
 		}
 
         /**
+		 * Método que lê uma questão dado um índice
          * @param $index
          * @return Questao
          */
-        //Método que lê uma questão dado um índice
 		public function lerPorIndex($index){
             $banc = Bd::getInstance();
             $banc->abrirconexao();

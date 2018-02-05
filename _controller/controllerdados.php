@@ -107,21 +107,10 @@ class Controllerdados {
 
 		}
 	}
+
     /**
-     * @param $idusuario
-     * @param $idprova
      * @param $idareaconhecimento
-     * @param $enunciado
-     * @param $questaooficial
-     * @param $respostaa
-     * @param $respostab
-     * @param $respostac
-     * @param $respostad
-     * @param $respostae
-     * @param $respostacorreta
-     */
-	//Método usado para cadastrar uma questão não oficial
-    /**
+     * Método usado para cadastrar uma questão não oficial
      * @param $idusuario
      * @param $idprova
      * @param $idareaconhecimento
@@ -341,13 +330,9 @@ class Controllerdados {
         return $pontuacaoTotal;
     }
 
+
     /**
-     * @param $id_usuario
-     * @param $id_questao
-     * @param $avaliacao
-     */
-    //Método resposável por avaliar a questão denunciada
-    /**
+     * Método resposável por avaliar a questão denunciada
      * @param $id_usuario
      * @param $id_questao
      * @param $avaliacao
@@ -358,12 +343,9 @@ class Controllerdados {
     	
     }
 
+
     /**
-     * @param $id
-     * @return bool
-     */
-    //Método responsável por transformar um usuário em "moderador"
-    /**
+     * Método responsável por transformar um usuário em "moderador"
      * @param $id
      * @return bool
      */
@@ -378,12 +360,9 @@ class Controllerdados {
         return $linha['privilegio'];
 	}
 
+
     /**
-     * @param $id
-     * @return bool
-     */
-    //Método resposável por transformar um usuário em "administrador"
-    /**
+     * Método resposável por transformar um usuário em "administrador"
      * @param $id
      * @return bool
      */
@@ -396,12 +375,9 @@ class Controllerdados {
         $linha = pg_fetch_array($result);
         return $linha['privilegio'];
 	}
+
     /**
-     * @param $id
-     * @return bool
-     */
-    //Método responsável por transformar em "normal" o priviçlégio de um usuário
-    /**
+     * Método responsável por transformar em "normal" o priviçlégio de um usuário
      * @param $id
      * @return bool
      */
@@ -416,11 +392,7 @@ class Controllerdados {
 	}
 
     /**
-     * @param $nome
-     * @return array|bool
-     */
-    //Método responsável por buscar usuários do sistema
-    /**
+     * Método responsável por buscar usuários do sistema
      * @param $nome
      * @return array|bool
      */
@@ -450,12 +422,9 @@ class Controllerdados {
         return $usuario;
     }
 
+
     /**
-     * @param $id
-     * @return bool
-     */
-    //Método responsável por verificar o privilégio de um usuário do sistema
-    /**
+     * Método responsável por verificar o privilégio de um usuário do sistema
      * @param $id
      * @return bool
      */
@@ -470,11 +439,7 @@ class Controllerdados {
     }
 
     /**
-     * @param $id
-     * @return bool
-     */
-    //Método responsável por banir usuário do sistema
-    /**
+     * Método responsável por banir usuário do sistema
      * @param $id
      * @return bool
      */
@@ -497,14 +462,9 @@ class Controllerdados {
 	6 - realização de simulado
 	7 - inserção de prova oficial
 	*/
+
     /**
-     * @param $tipo
-     * @param $idusuario
-     * @param $descricao
-     * @return bool
-     */
-    //Método responsável por inserir log no sistema
-    /**
+     * Método responsável por inserir log no sistema
      * @param $tipo
      * @param $idusuario
      * @param $descricao
@@ -522,13 +482,9 @@ class Controllerdados {
 
 	}
 
+
     /**
-     * @param $idquestao
-     * @param $idusuario
-     * @param $data
-     */
-    //Método responsável por inserir uma denúncia no sistema
-    /**
+     * Método responsável por inserir uma denúncia no sistema
      * @param $idquestao
      * @param $idusuario
      * @param $data
@@ -546,10 +502,7 @@ class Controllerdados {
     }
 
     /**
-     * @return array|bool
-     */
-    //Método responsável por buscar todas as denúncias
-    /**
+     * Método responsável por buscar todas as denúncias
      * @return array|bool
      */
     public function buscarDenuncia(){
@@ -580,12 +533,7 @@ class Controllerdados {
     }
 
     /**
-     * @param $qtdQuestoes
-     * @param $idUser
-     * @param $ano
-     */
-    //Método responsável por cadastrar prova oficial
-    /**
+     * Método responsável por cadastrar prova oficial
      * @param $qtdQuestoes
      * @param $idUser
      * @param $ano
@@ -598,11 +546,10 @@ class Controllerdados {
 			$this->insereLog( 7, $idUser, "Inserção de prova oficial" );
 	}
 
+
+
     /**
-     * @return array|bool
-     */
-    //Método responsável por buscar todos os logs do sistema
-    /**
+     * Método responsável por buscar todos os logs do sistema
      * @return array|bool
      */
     public function buscarLog(){
@@ -630,14 +577,9 @@ class Controllerdados {
 		return $log;
 	}
 
-    /**
-     * @param $dataini
-     * @param $datafim
-     * @return array|bool
-     */
 
-    //Método responsável por fazer a busca de logs do sistema de acordo com a data selecionada
     /**
+     * Método responsável por fazer a busca de logs do sistema de acordo com a data selecionada
      * @param $dataini
      * @param $datafim
      * @return array|bool

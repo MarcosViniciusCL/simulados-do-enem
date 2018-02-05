@@ -3,9 +3,19 @@
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
+/**
+ * Class ProvaDao
+ */
 class ProvaDao {
-	private $banc;
-	public function __construct() {
+    /**
+     * @var
+     */
+    private $banc;
+
+    /**
+     * ProvaDao constructor.
+     */
+    public function __construct() {
 
 
 	}
@@ -13,12 +23,18 @@ class ProvaDao {
 	//CREATE
 
     /**
+     * Método responsável por inserir uma prova no banco de dados
      * @param $qtdquestoes
      * @param $ano
      * @return bool
      */
-    //Método responsável por inserir uma prova no banco de dados
-	function inserir( $qtdquestoes, $ano ) {
+    //
+    /**
+     * @param $qtdquestoes
+     * @param $ano
+     * @return bool
+     */
+    function inserir($qtdquestoes, $ano ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
         pg_close($this -> conectar()); */
