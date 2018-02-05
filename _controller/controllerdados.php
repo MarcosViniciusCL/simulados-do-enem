@@ -694,6 +694,11 @@ class Controllerdados {
 		} else {
 			echo "deu errado";
 		}
-	}
+    }
+    public function buscarPontuacao($id, $data){
+        $dao = new UserDao();
+        $resultado = $dao->buscarPontuacao($id, $data);
+        return $resultado;
+    }
 }
 ?>

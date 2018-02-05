@@ -108,5 +108,20 @@ class UserDao {
 	        return $result;
         }
 
-    }
+	}
+	function buscarPontuacao($id, $data){
+		$banco = Bd::getInstance();
+	    $banco->abrirconexao();
+		$sql = null;
+		$sql = "SELECT pontuacao FROM simulado WHERE idusuario = '$id' AND data_simulado = '$data'";
+		$result = pg_query($sql);
+		if(pg_num_rows($result)===0){
+            $banco->fecharconexao();
+	        return false;
+        }else{
+            $banco->fecharconexao();
+	        return $result;
+        }
+
+	}
 }
