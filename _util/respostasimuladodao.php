@@ -3,8 +3,14 @@ require_once("../_model/Questao.php");
 require_once("../_model/Prova.php");
 require_once("../_model/Simulado.php");
 
+/**
+ * Class RespostaSimuladoDAO
+ */
 class RespostaSimuladoDAO {
 
+    /**
+     * RespostaSimuladoDAO constructor.
+     */
     public function __construct(){
     }
 
@@ -29,6 +35,10 @@ class RespostaSimuladoDAO {
          $banc->fecharconexao();
     }
 
+    /**
+     * @param $id_simulado
+     * @param $vector_obj
+     */
     public function inserirVectorObjeto($id_simulado, $vector_obj){
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
@@ -43,6 +53,11 @@ class RespostaSimuladoDAO {
         $banc->fecharconexao();
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @param $idsimulado
+     */
     public function atualizar($key, $value, $idsimulado){
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
@@ -50,6 +65,10 @@ class RespostaSimuladoDAO {
         $banc->fecharconexao();
     }
 
+    /**
+     * @param $id_simulado
+     * @param $vector_resp
+     */
     public function atualizarVetor($id_simulado, $vector_resp){
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
@@ -66,6 +85,10 @@ class RespostaSimuladoDAO {
         $banc->fecharconexao();
     }
 
+    /**
+     * @param $id_simulado
+     * @return array
+     */
     public function obterIdQuestoesSimulado($id_simulado){
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
@@ -81,6 +104,9 @@ class RespostaSimuladoDAO {
         return $ids;
     }
 
+    /**
+     * @param $idSimulado
+     */
     public function obterRepostaQuestoes($idSimulado){
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();

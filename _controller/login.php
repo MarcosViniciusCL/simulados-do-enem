@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * User: Alisson
+ * Date: 05/02/2018
+ * Time: 15:15
+ */
+ 
 //arquivo de login
 // session_start inicia a sessão
 if(!isset($_SESSION)){
@@ -15,8 +22,7 @@ if ($senha != "" || $senha != null || $login != null || $login != ""){
 	
 	$controller = Controllerdados::getInstance();
 	$controller->realizalogin($login, $senha , 0);
-	
-	
+
 }else{
 	echo "erro de login";
     //header('location:../index.html');

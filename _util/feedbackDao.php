@@ -6,15 +6,30 @@ if(!isset($_SESSION)){
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
+/**
+ * Class FeedbackDao
+ */
 class FeedbackDao {
-	private $banc;
-	public function __construct() {
+    /**
+     * @var
+     */
+    private $banc;
+
+    /**
+     * FeedbackDao constructor.
+     */
+    public function __construct() {
         
         
 	}
 	
 	//CREATE
-	function inserir( $feed ) {
+
+    /**
+     * @param $feed
+     * @return bool
+     */
+    function inserir($feed ) {
         
         $iduser = $feed->getIduser();
         $titulo= $feed->getTitulo();

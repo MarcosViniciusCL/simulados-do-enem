@@ -2,20 +2,35 @@
 
 include_once( "_model/segurancaA.php" );
 
+/**
+ * Class ControllerOperacoes
+ */
 class ControllerOperacoes{
-	
-	private $caminho = "";
-	
-	public	function __construct() {
+
+    /**
+     * @var string
+     */
+    private $caminho = "";
+
+    /**
+     * ControllerOperacoes constructor.
+     */
+    public	function __construct() {
 
 	}
-	
-	
-	public function setcaminho($str) {
+
+
+    /**
+     * @param $str
+     */
+    public function setcaminho($str) {
         $this->caminho = $str;
         $DAO->setArqSaida("povoamento.sql");
     }
 
+    /**
+     *
+     */
     public function lerlinha() {
         
 			$arq = fopen ($this->caminho, 'r');
@@ -110,7 +125,10 @@ class ControllerOperacoes{
        
         $DAO->closeFile();
     }
-    
+
+    /**
+     * @param $questao
+     */
     private function salvaSQL($questao){
         $DAO->gerarInsert(questao);
     }

@@ -11,9 +11,15 @@ if(!isset($_SESSION)){
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
+/**
+ * Class denunciadao
+ */
 class denunciadao
 {
 
+    /**
+     * @var
+     */
     private $banc;
 
     /**
@@ -26,10 +32,10 @@ class denunciadao
     //CREATE
 
     /**
+     * Método responsável por inserir uma denúncia no banco de dados
      * @param $denuncia
      * @return bool
      */
-    //Método responsável por inserir uma denúncia no banco de dados
     function inserir( $denuncia ) {
 
         $idusuario = $denuncia->getIdUsuario();
@@ -54,9 +60,10 @@ class denunciadao
     }
 
     /**
+     * Método responsável por buscar denúncias no banco de dados
      * @return bool|resource
      */
-    //Método responsável por buscar denúncias no banco de dados
+
     function buscar(){
         $SQL = "SELECT * FROM denunciaquestao";
         $banco = Bd::getInstance();

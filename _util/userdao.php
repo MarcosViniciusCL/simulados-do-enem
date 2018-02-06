@@ -14,14 +14,16 @@ class UserDao {
         
 	}
 
-	//CREATE
+	/**
+     * @param user
+     */
 	function inserir( $user ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
         pg_close($this -> conectar()); */
         
-        echo get_class($user);
-        echo $user->getNome();
+        //echo get_class($user);
+        //echo $user->getNome();
         $nome = $user->getNome();
         $email= $user->getEmail();
         $senha= $user->getSenha();
@@ -33,7 +35,7 @@ class UserDao {
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
         
-        $result = pg_query( $obanco, $SQL );
+        $result = @pg_query( $obanco, $SQL );
 		if ($result != false  ) {
 			echo "Cadastrado com sucesso!";
 			$banc->fecharconexao();
@@ -47,7 +49,12 @@ class UserDao {
 
 	}
 
-	//UPDATE
+	/**
+     * @param atributo
+     * @param acao
+     * @param id
+     * @return resultado
+     */
 	function atualizar($atributo,$acao,$id) {
         $banc = Bd::getInstance();
         $banc->abrirconexao();
@@ -60,7 +67,10 @@ class UserDao {
 		return $resultado;
 	}
 
-	//READ
+	/**
+     * @param email
+     * @param senha
+     */
 	function ler( $email, $senha ) {
 		$banc = Bd::getInstance();
 		$banc->abrirconexao();
@@ -82,14 +92,22 @@ class UserDao {
 		return null;
 	}
 
-	//DELETE
+	/**
+     * @param SQL
+     * @return Resultado
+     */
 	function apagar( $SQL ) {
 		$banco = $this->conectar();
 		$Resultado = pg_query( $this->conectar(), $SQL );
 		pg_close( $this->conectar() );
 		return $Resultado;
 	}
-	//SELECT
+	
+	/**
+     * @param nome
+     * @param id
+     * @return result
+     */
     function buscar($nome, $id){
 	    $banco = Bd::getInstance();
 	    $banco->abrirconexao();
@@ -108,5 +126,26 @@ class UserDao {
 	        return $result;
         }
 
-    }
+	}
+
+	/**
+     * @param id
+     * @param data
+     * @return result
+     */
+	function buscarPontuacao($id, $data){
+		$banco = Bd::getInstance();
+	    $banco->abrirconexao();
+		$sql = null;
+		$sql = "SELECT pontuacao FROM simulado WHERE idusuario = '$id' AND data_simulado = '$data'";
+		$result = pg_query($sql);
+		if(pg_num_rows($result)===0){
+            $banco->fecharconexao();
+	        return false;
+        }else{
+            $banco->fecharconexao();
+	        return $result;
+        }
+
+	}
 }

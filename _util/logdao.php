@@ -3,9 +3,19 @@
 //include_once( "seguranca.php" );
 require_once( "bd.php" );
 
+/**
+ * Class LogDao
+ */
 class LogDao {
-	private $banc;
-	public function __construct() {
+    /**
+     * @var
+     */
+    private $banc;
+
+    /**
+     * LogDao constructor.
+     */
+    public function __construct() {
 
 
 	}
@@ -13,12 +23,13 @@ class LogDao {
 	//CREATE
 
     /**
+     * Método responsável por inserir um log no banco de dados
      * @param $iduser
      * @param $idacao
      * @param $descricao
      * @return bool
      */
-    //Método responsável por inserir um log no banco de dados
+
 	function inserir( $iduser, $idacao, $descricao ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
@@ -43,16 +54,14 @@ class LogDao {
 		}
 	}
 
-	//READ
-	//0 - pesquisar por id do usuario
-	//1 - pesquisar por id da acao
-	//2 - pesquisar por id do log
+
     /**
+     * 0 - pesquisar por id do usuario; 1 - pesquisar por id da ação; 2 - pesquisar por id do log;
+     * Método responsável por fazer a leitura dos logs salvos no banco de dados
      * @param $tipoleitura
      * @param $id
      * @return null|resource
      */
-    //Método responsável por fazer a leitura dos logs salvos no banco de dados
 	function ler( $tipoleitura, $id ) {
 		$banc = Bd::getInstance();
 		$banc->abrirconexao();
@@ -82,9 +91,9 @@ class LogDao {
 	}
 
     /**
+     * Método responsável por buscar os logs do banco de dados
      * @return bool|resource
      */
-    //Método responsável por buscar os logs do banco de dados
 	function buscarLogs(){
 	    $SQL = "SELECT * FROM logsistema";
         $banc = Bd::getInstance();
@@ -101,11 +110,12 @@ class LogDao {
     }
 
     /**
+     * Método responsável por buscar os logs no banco de dados de acordo com a data inicial e a data final selecionada
      * @param $dataini
      * @param $datafim
      * @return bool|resource
      */
-    //Método responsável por buscar os logs no banco de dados de acordo com a data inicial e a data final selecionada
+
     function buscarLogsPeriodo($dataini,$datafim){
         $SQL = "SELECT * FROM logsistema WHERE (datalog BETWEEN '$dataini' AND '$datafim')";
         $banc = Bd::getInstance();
