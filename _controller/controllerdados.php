@@ -648,5 +648,15 @@ class Controllerdados {
         $resultado = $dao->buscarPontuacao($id, $data);
         return $resultado;
     }
+	
+	 public function alteraprivilegioUsuario($id, $privilegio){
+        $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', $privilegio, $id);
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
+    }
 }
 ?>
