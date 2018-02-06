@@ -42,6 +42,21 @@ class ProvaDao {
 		}
 	}
 
+	function buscarProva($ano){
+        $SQL = "SELECT * FROM prova where ano='$ano'";
+
+        echo 'aqui';
+        $banc = Bd::getInstance();
+        $obanco = $banc->abrirconexao();
+
+        $resultado = pg_query($SQL);
+        $linha = pg_fetch_array($resultado);
+        $prova = new Prova($linha['idprova'], $linha['ano'], "", $linha['qtdquestoes'], "");
+
+        $banc->fecharconexao();
+        return $prova;
+    }
+
 	
 
 }

@@ -682,18 +682,15 @@ class Controllerdados {
      * @param $ano
      */
     public function cadastraQuestao($enunciado, $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta, $areaconhecimento, $ano){
-		$senha =""; $email = "";
-    	$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
+        $provadao = new ProvaDao();
+        $q = $provadao->buscarProva($ano);
+        $idprova = $q->getId();
 
-		$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
+        $questaodao = new QuestaoDAO();
 
-		$dao = new UserDao();
-		$verifica = $dao->inserir( $user );
-		if ( $verifica == true ) {
-			echo "deu certo";
-		} else {
-			echo "deu errado";
-		}
-	}
+        $questao = new Questao(-1, $_SESSION['id'], $idprova, $areaconhecimento, $enunciado,"S", $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta);
+
+        $questaodao->inserir($questao);
+    }
 }
 ?>
