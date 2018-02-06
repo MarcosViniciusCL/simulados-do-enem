@@ -649,6 +649,11 @@ class Controllerdados {
         return $resultado;
     }
 	
+	/**
+	*@param id
+    * @param privilegio
+    * @return resultado
+	*/
 	 public function alteraprivilegioUsuario($id, $privilegio){
         $userdao = new UserDao();
         $result = $userdao->atualizar('privilegio', $privilegio, $id);
