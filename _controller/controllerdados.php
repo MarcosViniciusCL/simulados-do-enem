@@ -633,19 +633,9 @@ class Controllerdados {
         $idprova = $q->getId();
 
         $questaodao = new QuestaoDAO();
-
-<<<<<<< HEAD
         $questao = new Questao(-1, $_SESSION['id'], $idprova, $areaconhecimento, $enunciado,"S", $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta);
 
         $questaodao->inserir($questao);
-=======
-		$dao = new UserDao();
-		$verifica = $dao->inserir( $user );
-		if ( $verifica == true ) {
-			echo "deu certo";
-		} else {
-			echo "deu errado";
-		}
     }
 
     /**
@@ -657,7 +647,6 @@ class Controllerdados {
         $dao = new UserDao();
         $resultado = $dao->buscarPontuacao($id, $data);
         return $resultado;
->>>>>>> 860f6ab79b6cab8e020975b5156b54fdd51c9054
     }
 }
 ?>
