@@ -25,6 +25,8 @@
 	
 	<link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
 	<!--<link rel="stylesheet" type="text/css" href="../_css/cadastro.css">-->
+
+	<link href="../_css/uploadfilemulti.css" rel="stylesheet">
 	
 </head>
 <body style="background-color:#606c76">
@@ -42,7 +44,12 @@
 						<form>
 							<textarea class="form-control" id="comments" style="margin-top: 10px" name="Enunciado" id="Enunciado" placeholder="Digite aqui o texto da questão." rows="7"></textarea>
 							<h4>Se houver imagem no enunciado da questão, selecione-a usando o botão abaixo:</h4>
-							<input type="file" accept=".jpeg, .png" accept=".png"  class="form-control-file" id="exampleFormControlFile1">
+							<!-- input type="file" accept=".jpeg, .png" accept=".png"  class="form-control-file" id="exampleFormControlFile1"> -->
+							<div class="container">
+								<div class="jumbotron">
+									<button type="button" id="mulitplefileuploader">Importar imagem(s)</button>
+								</div>
+							</div>
 							<h4>Escreva o texto das alternativas da questão, selecione a alternativa cujo a resposta é a resposta correta da questão! Caso a resposta seja uma imagem, escolha a imagem e selecione a correta! </h4>
 							<div class="col-md-7 col-lg-7 col-sm-12">
 								<div class="input-group">																		
@@ -190,3 +197,42 @@
 	<script language="JavaScript" src="../_js/popper.min.js"></script>
 </body>
 </html>
+<script src="../_js/jquery.fileuploadmulti.min.js"></script>
+<script src="../_js/md5.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+     {
+
+     var settings = {
+        url: "../_controller/receberUpload.php",
+        method: "POST",
+        allowedTypes:"png,jpg,jpeg,gif",
+        fileName: "file",
+        multiple: true,
+        
+        onSuccess:function(files,data,xhr)
+        {
+			document.getElementById("comments").value += "<img src=" + data + ">";
+           alert(data);
+
+        },
+     
+         afterUploadAll:function()
+         {
+            $(".upload-bar").css("animation-play-state","paused");
+            
+         },
+        onError: function(files,status,errMsg)
+        {       
+          
+            alert(errMsg);
+        }
+
+        
+     }
+     $("#mulitplefileuploader").uploadFile(settings);
+        
+     });
+</script>
+
+
