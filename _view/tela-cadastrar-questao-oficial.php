@@ -27,6 +27,40 @@
 	<!--<link rel="stylesheet" type="text/css" href="../_css/cadastro.css">-->
 
 	<link href="../_css/uploadfilemulti.css" rel="stylesheet">
+	<script>
+		function submeterQuestao(){
+			var enunciado = document.getElementById("comments").value;
+			var ano = document.getElementById("anoQuestao").value;
+			var respa = document.getElementById("respa").value;
+			var respb = document.getElementById("respb").value;
+			var respc = document.getElementById("respc").value;
+			var respd = document.getElementById("respd").value;
+			var respe = document.getElementById("respe").value;
+			var correta;
+			var choices = [];
+			var els = document.getElementsByName('input-group-addon');
+			for (var i=0;i<els.length;i++){
+				if ( els[i].checked ) {
+					if(i == 0){
+						correta = "A";
+					}
+					if(i == 1){
+						correta = "B";
+					}
+					if(i == 2){
+						correta = "C";
+					}
+					if(i == 3){
+						correta = "D";
+					}
+					if(i == 4){
+						correta = "E";
+					}
+					break;
+				}
+			}
+		}
+	</script>
 	
 </head>
 <body style="background-color:#606c76">
@@ -54,35 +88,35 @@
 							<div class="col-md-7 col-lg-7 col-sm-12">
 								<div class="input-group">																		
 									<span class="input-group-addon">
-										A.<input name="correta" type="radio" aria-label="...">
+										A.<input name="correta" id='respa' type="radio" aria-label="...">
 									</span>
 									<input type="text" class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										B.<input name="correta" type="radio" aria-label="...">
+										B.<input name="correta" id='respb' type="radio" aria-label="...">
 									</span>
 									<input type="text" class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										C.<input name="correta" type="radio" aria-label="...">
+										C.<input name="correta" id='respc' type="radio" aria-label="...">
 									</span>
 									<input type="text" class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										D.<input name="correta" type="radio" aria-label="...">
+										D.<input name="correta" id='respd' type="radio" aria-label="...">
 									</span>
 									<input type="text" class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										E.<input name="correta" type="radio" aria-label="...">
+										E.<input name="correta" id='respe' type="radio" aria-label="...">
 									</span>
 									<input type="text" class="form-control" aria-label="...">
 								</div><!-- /input-group -->	
@@ -155,7 +189,7 @@
 							</div>							
 
 							<h4>Selecione o Ano da Questão Que Está Cadastrando</h4>
-							<input type="number" name="points" min="1995" max="2017" step="1" required value="2017">							
+							<input type="number" id='anoQuestao' name="points" min="1995" max="2017" step="1" required value="2017">							
 														
 							<br><br><br><br><br><br><br><br>			
 							<button class="button">Enviar Questão</button>
@@ -213,8 +247,6 @@ $(document).ready(function()
         onSuccess:function(files,data,xhr)
         {
 			document.getElementById("comments").value += "<img src=" + data + ">";
-           alert(data);
-
         },
      
          afterUploadAll:function()
