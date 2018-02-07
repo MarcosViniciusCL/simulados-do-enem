@@ -663,5 +663,36 @@ class Controllerdados {
         $linha = pg_fetch_array($result);
         return $linha['privilegio'];
     }
+	
+	/**
+     * @param $escrever
+     * @return Denuncia
+     */
+    private function getFeedback($escrever){
+        $feedback = new Feedback($escrever[1],$escrever[2],$escrever[3]);
+        $feedback->setIdfeed($escrever[0]);
+        return $feedback;
+    }
+	
+	/**
+     * Método responsável por buscar todas os feedbacks
+     * @return array|bool
+     */
+    public function buscarFeedback(){
+        $feedbackdao = new FeedbackDao();
+        $result = $feedbackdao->buscar();
+        if($result==false){
+            return false;
+        }
+        $vetor = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $feed = $this->getDenuncia($escrever);
+            $vetor[$i] = $feed;
+            $i++;
+        }
+        return $vetor;
+
+    }
 }
 ?>
