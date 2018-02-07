@@ -493,8 +493,8 @@ class Controllerdados {
      * @param $data
      * @return bool
      */
-    public function inserirDenuncia($idquestao, $idusuario, $data){
-	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
+    public function inserirDenuncia($idquestao, $idusuario, $data, $observacao){
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario,$observacao);
     	$denunciadao = new denunciadao();
 	    $result = $denunciadao->inserir($denuncia);
 	    if ($result==true){
@@ -530,7 +530,7 @@ class Controllerdados {
      * @return Denuncia
      */
     private function getDenuncia($escrever){
-        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1], $escrever[5]);
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1], $escrever[3]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }

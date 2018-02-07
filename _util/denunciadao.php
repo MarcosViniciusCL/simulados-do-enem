@@ -39,10 +39,11 @@ class denunciadao
     function inserir( $denuncia ) {
 
         $idusuario = $denuncia->getIdUsuario();
-        $idquestao = $denuncia->getIdQuestao;
-        
+        $idquestao = $denuncia->getIdQuestao();
+        $data = $denuncia->getData();
+        $observacao = $denuncia->getObservacao();
 
-        $SQL = "INSERT INTO denunciaquestao (idusuario, idquestao, datadenuncia) VALUES ('$idusuario', '$idquestao')";
+        $SQL = "INSERT INTO denunciaquestao (idusuario, idquestao, datadenuncia,observacao) VALUES ('$idusuario', '$idquestao','$data','$observacao')";
 
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
