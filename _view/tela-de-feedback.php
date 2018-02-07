@@ -1,34 +1,63 @@
 <?php
-	include_once( "../_model/seguranca.php" );
+
+require_once ("../_controller/Controllerdados.php");
+
+$controller = Controllerdados::getInstance();
+$result = $controller->buscarFeedback();
+$tamanho = count($result);
+//echo $tamanho;
+if($result==false){
+    echo "Erro, denúncias não foram encontradas.";
+}else{
+    //echo " ".$id;
+}
 ?>
+
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="PT-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tela de leitura de feedback</title>
+    <title> Feedbacks </title>
+    <link type= "text/css" rel=stylesheet href="../_css/bootstrap3.css">
+    <link type= "text/css" rel=stylesheet href="../_css/milligram.min.css">
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
-    <link rel="stylesheet" type="text/css" href="../_css/bootstrap3.css">
-    <link rel="stylesheet" type="text/css" href="../_css/tela-inicial-adm.css">
+    <?php include ('navbar-adm.php')?>
+
 </head>
-<body>
-    <?php 
-    include('navbar-adm.php');
-    ?>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h2>teste esquerda</h2>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h2>testando o meio</h2>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-            <h2>testando a direita</h2>
+<body style="background-color:#606c76">
+<div class="container-fluid">
+    <div class="row">        
+        <div class="card col-md-12 col-lg-12 col-sm-12">
+            <div id="responsive">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Id Feedback</th>
+                        <th>Id Usuário</th>
+                        <th>Título Feed</th>
+                        <th>Conteúdo Feed</th>
+                    </tr>
+                    <?php
+                   
+                    while ($fetch = pg_fetch_row($result)) { ?>
+                        <tr>
+                            <td><?php echo $fetch[0]; ?> &nbsp;</td>
+                            <td><?php echo $fetch[1]; ?> &nbsp;</td>
+                            <td><?php echo $fetch[3]; ?> &nbsp;</td>
+                            <td><?php echo $fetch[2]; ?> &nbsp;</td>
+                           
+                            
+                        </tr>
+                    <?php 
+                    }
+                    ?>
+                    <tbody>
+                </table>
             </div>
         </div>
+       
     </div>
-    
+</div>
+
 </body>
 </html>

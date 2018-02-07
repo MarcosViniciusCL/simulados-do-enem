@@ -38,7 +38,7 @@
             
             <div class=" card col-sm-12 col-md-7 col-lg-7">
             <br><br><br>
-                <form method="POST" action="../_controller/buscar_usuarios.php">
+                <form method="POST" action="buscar_usuarios.php">
                     <div class="form-group">
                                                 
                         <div class="col-sm-8 col-md-8 col-lg-8">                

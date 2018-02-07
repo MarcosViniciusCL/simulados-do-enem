@@ -44,6 +44,7 @@ if($result==false){
                             <td><?php echo "Data: ".$result[$i]->getData(); ?> &nbsp;</td>
                             <td><?php echo "ID Usuário: ".$result[$i]->getIdUsuario(); ?> &nbsp;</td>
                             <td><?php echo "ID da Questão Denunciada: ".$result[$i]->getIdQuestao(); ?> &nbsp;</td>
+                            <td><?php echo "Observação: ".$result[$i]->getObservacao(); ?> &nbsp;</td>
                         </tr>
                     <?php $i++;
                     }

@@ -21,7 +21,7 @@ if ( ( isset( $_POST[ 'comments' ] ) == false )and( isset( $_POST[ 'name' ] ) ==
 	$controller = Controllerdados::getInstance();
 
 	$controller->cadastraFeedback($idlogado, $descricao, $titulo);	
-	header("Location:../paineldeusuario.php");
+	header("Location:../_view/paineldeusuario.php");
 }
 
 ?>

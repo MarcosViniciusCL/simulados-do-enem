@@ -109,7 +109,6 @@ class Controllerdados {
 	}
 
     /**
-     * @param $idareaconhecimento
      * Método usado para cadastrar uma questão não oficial
      * @param $idusuario
      * @param $idprova
@@ -494,8 +493,8 @@ class Controllerdados {
      * @param $data
      * @return bool
      */
-    public function inserirDenuncia($idquestao, $idusuario, $data){
-	    $denuncia = new Denuncia($idquestao,$data,$idusuario);
+    public function inserirDenuncia($idquestao, $idusuario, $data, $observacao){
+	    $denuncia = new Denuncia($idquestao,$data,$idusuario,$observacao);
     	$denunciadao = new denunciadao();
 	    $result = $denunciadao->inserir($denuncia);
 	    if ($result==true){
@@ -531,7 +530,7 @@ class Controllerdados {
      * @return Denuncia
      */
     private function getDenuncia($escrever){
-        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1], $escrever[3]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }
@@ -647,6 +646,46 @@ class Controllerdados {
         $dao = new UserDao();
         $resultado = $dao->buscarPontuacao($id, $data);
         return $resultado;
+    }
+	
+	/**
+	*@param id
+    * @param privilegio
+    * @return resultado
+	*/
+	 public function alteraprivilegioUsuario($id, $privilegio){
+        $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', $privilegio, $id);
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
+    }
+	
+	/**
+     * @param $escrever
+     * @return Denuncia
+     */
+    private function getFeedback($escrever){
+        $feedback = new Feedback($escrever[1],$escrever[2],$escrever[3]);
+        $feedback->setIdfeed($escrever[0]);
+        return $feedback;
+    }
+	
+	/**
+     * Método responsável por buscar todas os feedbacks
+     * @return array|bool
+     */
+    public function buscarFeedback(){
+        $feedbackdao = new FeedbackDao();
+        $result = $feedbackdao->buscar();
+        if($result==false){
+            return false;
+        }
+        
+        return $result;
+
     }
 }
 ?>

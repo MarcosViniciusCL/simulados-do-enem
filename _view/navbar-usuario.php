@@ -75,9 +75,11 @@
             <li>
                 <a href="gerencia-de-conta.php">Minha conta</a>
             </li>
+            <!--
             <li>
                 <a href="tela-de-ajuda.php">Ajuda</a>
             </li>
+            -->
             <li>
                 <a href="../_controller/logout.php">Sair da conta</a>
             </li>
