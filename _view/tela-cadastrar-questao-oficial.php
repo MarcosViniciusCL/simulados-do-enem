@@ -27,40 +27,7 @@
 	<!--<link rel="stylesheet" type="text/css" href="../_css/cadastro.css">-->
 
 	<link href="../_css/uploadfilemulti.css" rel="stylesheet">
-	<script>
-		function submeterQuestao(){
-			var enunciado = document.getElementById("comments").value;
-			var ano = document.getElementById("anoQuestao").value;
-			var respa = document.getElementById("respa").value;
-			var respb = document.getElementById("respb").value;
-			var respc = document.getElementById("respc").value;
-			var respd = document.getElementById("respd").value;
-			var respe = document.getElementById("respe").value;
-			var correta;
-			var choices = [];
-			var els = document.getElementsByName('input-group-addon');
-			for (var i=0;i<els.length;i++){
-				if ( els[i].checked ) {
-					if(i == 0){
-						correta = "A";
-					}
-					if(i == 1){
-						correta = "B";
-					}
-					if(i == 2){
-						correta = "C";
-					}
-					if(i == 3){
-						correta = "D";
-					}
-					if(i == 4){
-						correta = "E";
-					}
-					break;
-				}
-			}
-		}
-	</script>
+	<script src="../_js/submeterquestao.js"></script>
 	
 </head>
 <body style="background-color:#606c76">
@@ -88,37 +55,37 @@
 							<div class="col-md-7 col-lg-7 col-sm-12">
 								<div class="input-group">																		
 									<span class="input-group-addon">
-										A.<input name="correta" id='respa' type="radio" aria-label="...">
+										A.<input name="correta"  onclick="marcarCorreta('A')" type="radio" aria-label="...">
 									</span>
-									<input type="text" class="form-control" aria-label="...">
+									<input type="text" id='respa' class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										B.<input name="correta" id='respb' type="radio" aria-label="...">
+										B.<input name="correta"  onclick="marcarCorreta('B')" type="radio" aria-label="...">
 									</span>
-									<input type="text" class="form-control" aria-label="...">
+									<input type="text" id='respb' class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										C.<input name="correta" id='respc' type="radio" aria-label="...">
+										C.<input name="correta"  onclick="marcarCorreta('C')" type="radio" aria-label="...">
 									</span>
-									<input type="text" class="form-control" aria-label="...">
+									<input type="text" id='respc' class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										D.<input name="correta" id='respd' type="radio" aria-label="...">
+										D.<input name="correta"  onclick="marcarCorreta('D')" type="radio" aria-label="...">
 									</span>
-									<input type="text" class="form-control" aria-label="...">
+									<input type="text" id='respd' class="form-control" aria-label="...">
 								</div><!-- /input-group -->
 
 								<div class="input-group">
 									<span class="input-group-addon">
-										E.<input name="correta" id='respe' type="radio" aria-label="...">
+										E.<input name="correta"  onclick="marcarCorreta('E')" type="radio" aria-label="...">
 									</span>
-									<input type="text" class="form-control" aria-label="...">
+									<input type="text" id='respe' class="form-control" aria-label="...">
 								</div><!-- /input-group -->	
 							</div>
 							<div class="col-md1 col-lg-1">
@@ -176,27 +143,28 @@
 							<h4>Escolha a área de conhecimento da questão</h4>
 							
 							<div class="input-group">
-								<input name="areaconhecimento" type="radio"> Ciências Humanas <br><br>
+								<input name="areaconhecimento" onclick="marcarAreaConhecimento(1)" type="radio"> Ciências Humanas <br><br>
 							</div>
 							<div class="input-group">
-								<input name="areaconhecimento" type="radio"> Ciências da Natureza <br><br>
+								<input name="areaconhecimento" onclick="marcarAreaConhecimento(2)" type="radio"> Ciências da Natureza <br><br>
 							</div>
 							<div class="input-group">
-								<input name="areaconhecimento" type="radio"> Linguagens e Suas Tecnologias <br><br>
+								<input name="areaconhecimento" onclick="marcarAreaConhecimento(3)" type="radio"> Linguagens e Suas Tecnologias <br><br>
 							</div>
 							<div class="input-group">
-								<input name="areaconhecimento" type="radio"> Matemática e Suas Tecnologias <br><br>
-							</div>							
+								<input name="areaconhecimento" onclick="marcarAreaConhecimento(4)" type="radio"> Matemática e Suas Tecnologias <br><br>
+							</div>
 
 							<h4>Selecione o Ano da Questão Que Está Cadastrando</h4>
 							<input type="number" id='anoQuestao' name="points" min="1995" max="2017" step="1" required value="2017">							
 														
 							<br><br><br><br><br><br><br><br>			
-							<button class="button">Enviar Questão</button>
-							<button class="button">Cancelar Envio</button>	
+
 						</div>
 					</form>
-				</div>				            				                
+                    <button class="button" onclick="submeterQuestao()">Enviar Questão</button>
+                    <button class="button">Cancelar Envio</button>
+                </div>
             </div>
 		</div>
 	</div>
@@ -216,7 +184,7 @@
 						<input type="number" name="points" min="1995" max="2017" step="1" value="2017">	
 																
 						<br><br><br><br><br>			
-						<button class="button">Enviar Prova</button>
+						<input class="button" onclick="submeterQuestao()">Enviar Prova</input>
 						<button class="button">Cancelar Envio</button>	
 					</div>
 				</form>
@@ -232,7 +200,6 @@
 </body>
 </html>
 <script src="../_js/jquery.fileuploadmulti.min.js"></script>
-<script src="../_js/md5.js"></script>
 <script type="text/javascript">
 $(document).ready(function()
      {

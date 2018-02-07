@@ -132,6 +132,15 @@
         }
 
         /**
+         * @return mixed
+         */
+        public function getQuestaooficial()
+        {
+            return $this->questaooficial;
+        }
+
+
+        /**
          * @param $respostaMarcadaUsuario
          */
         public function setRespostaMarcadaUsuario($respostaMarcadaUsuario){
