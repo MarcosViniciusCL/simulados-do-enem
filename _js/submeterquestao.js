@@ -26,9 +26,9 @@ function submeterQuestao(){
 
 function enviarAjax(enunciado, ano, respa, respb, respc, respd, respe, correta, area) {
     $.ajax({
-        url: "../_controller/cadastrar-questao-oficial.php",
+        url: "../_controller/cadastrar-questao-nao-oficial.php",
         type: 'post',
-        data: {Enunciado:enunciado,questaoa:respa,questaob:respb,questaoc:respc,questaod:respd,questaoe:respe,correta:correta,areaconhecimento:area,ano:ano},
+        data: {Enunciado:enunciado,a:respa,b:respb,c:respc,d:respd,e:respe,resposta:correta,area:area,ano:ano},
         success: function (result) {
 
         }
