@@ -14,7 +14,7 @@
     $tamanho = count($result);
     //echo $tamanho;
     if($result==false){
-        echo "Erro, usuários com o nome especificado não foram encontrados.";
+        echo ("<script>alert('Não foram encontrados Usuários com o nome especificado!!');</script>");
     }else{
         //echo " ".$id;
     }
