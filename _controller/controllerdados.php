@@ -684,14 +684,8 @@ class Controllerdados {
         if($result==false){
             return false;
         }
-        $vetor = array();
-        $i = 0;
-        while($escrever=pg_fetch_array($result)){
-            $feed = $this->getDenuncia($escrever);
-            $vetor[$i] = $feed;
-            $i++;
-        }
-        return $vetor;
+        
+        return $result;
 
     }
 }

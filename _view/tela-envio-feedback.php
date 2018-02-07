@@ -21,21 +21,21 @@
         <div class="container-fluid">
             <div class="row">                               
 					<div id="coluna1" class="col-md-2 col-sm-2 col-lg-2"></div>
-					<div id="coluna2" class="col-md-4 col-sm-4 col-lg-4"  style="background-color:#FFFFFF">
+                    <div id="coluna2" class="card col-md-4 col-sm-4 col-lg-4"  style="background-color:#FFFFFF">
                     <br><br><br>
-						<p>Envie-nos um feedback sobre a plataforma.</p>
-						<p>
-							<span></span>Feira de Santana, BR</p>
-						<p>
-							<span></span>Telefone: +55 75 10101010101</p>
-						
-					</div>
-					<div id="coluna3" class="col-md-4 col-sm-5 col-lg4"  style="background-color:#FFFFFF">
+                        <p>Envie-nos um feedback sobre a plataforma.</p>
+                        <p>
+                            <span></span>Feira de Santana, BR</p>
+                        <p>
+                            <span></span>Telefone: +55 75 10101010101</p>
+                        
+                    </div>
+                    <div id="coluna3" class="card col-md-4 col-sm-5 col-lg4"  style="background-color:#FFFFFF">
                     <br><br><br>
-						<form action="_controller/enviofeedback.php" method="POST">
+                        <form action="../_controller/enviofeedback.php" method="POST">
                             <div id="teste" class="row">
                                 <div class="col-sm-6 form-group">
-                                    <input class="form-control" id="name" name="name" placeholder="Nome" type="text" required>
+                                    <input class="form-control" id="name" name="name" placeholder="Título do FeedBack" type="text" required>
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <input class="form-control" id="email" name="email" placeholder="Email@example.com" type="email" required>
@@ -43,11 +43,11 @@
                             </div>
                             <textarea class="form-control" id="comments" name="comments" placeholder="Comente" rows="5"></textarea>
                             <br>
-                           
-                             <button class="button" type="submit">Enviar</button>                             
+                        
+                            <button class="button" type="submit">Enviar</button>                             
                             </div>
                         </form>
-					</div>                
+                    </div>                
             </div>
         </div>
 </body>
