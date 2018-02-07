@@ -15,9 +15,11 @@
         $d = $_POST['d'];
         $e = $_POST['e'];
         $resposta = $_POST['resposta'];
+        $area = $_POST['area'];
+        $ano = $_POST['ano'];
 
         $controller = Controllerdados::getInstance();
-        $controller->cadastrarQuestaoNaoOficial($idlogado, '','',$enunciado, true,$a, $b, $c, $d, $e, $resposta);
+        $controller->cadastrarQuestaoNaoOficial($idlogado, $ano,$area,$enunciado, "N",$a, $b, $c, $d, $e, $resposta);
     }
 
 

@@ -123,22 +123,22 @@ class Controllerdados {
      * @param $respostae
      * @param $respostacorreta
      */
-    public function cadastrarQuestaoNaoOficial($idusuario, $idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
-        if($idusuario==null || $idprova==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
+    public function cadastrarQuestaoNaoOficial($idusuario, $ano, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta ){
+        if($idusuario==null || $ano==null || $idareaconhecimento==null || $enunciado==null || $questaooficial==null ||
             $respostaa==null || $respostab==null || $respostac==null || $respostad==null || $respostae==null || $respostacorreta==null){
 
             echo "Cai fora";
         }else{
-            $questao = new Questao($idusuario,$idprova, $idareaconhecimento, $enunciado, $questaooficial, $respostaa, $respostab,
-                $respostac, $respostad, $respostae, $respostacorreta);
 
-            $dao = new QuestaoDAO();
-            $verifica = $dao->inserir($questao);
-            if($verifica == true){
-                echo "deu certo";
-            }else{
-                echo "deu errado";
-            }
+            $provadao = new ProvaDao();
+            $q = $provadao->buscarProva($ano);
+            $idprova = $q->getId();
+            //echo $idprova;
+
+            $questaodao = new QuestaoDAO();
+            $questao = new Questao(-1, $_SESSION['id'], -1, $idareaconhecimento, $enunciado,"N",$respostaa, $respostab, $respostac, $respostad, $respostae, $respostacorreta);
+            print_r($questao);
+            $questaodao->inserir($questao);
         }
 
 
