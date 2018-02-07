@@ -54,7 +54,15 @@
                     <tr>
                         <td><?php echo $result[$i]->getNome(); ?> &nbsp;</td>
                         <td><?php echo $result[$i]->getEmail(); ?> &nbsp;</td>
-                        <td><?php echo $result[$i]->getPrivilegio(); ?> &nbsp;</td>
+                        <td><?php if($result[$i]->getPrivilegio()=='N'){
+                            echo "Normal";
+                            }elseif ($result[$i]->getPrivilegio()=='A'){
+                                echo "Administrador";
+                            }elseif ($result[$i]->getPrivilegio()=='M'){
+                                echo "Moderador";
+                            }else{
+                                echo "Banido";
+                            } ?> &nbsp;</td>
                         <td>                        
                             <form action="../_controller/alterarprivilegio.php" method="post"><input value="<?php echo 'A%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Administrador&nbsp;
                             <input value="<?php echo 'M%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Moderador&nbsp;
