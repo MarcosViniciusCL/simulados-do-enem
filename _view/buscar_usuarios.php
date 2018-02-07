@@ -6,7 +6,7 @@
  * Time: 11:28
  */
 
-    require_once ("Controllerdados.php");
+    require_once("../_controller/controllerdados.php");
     $nome = $_POST['nome'];
     $id = $_SESSION['privilegio'];
     $controller = Controllerdados::getInstance();
@@ -27,7 +27,7 @@
     <link type= "text/css" rel=stylesheet href="../_css/bootstrap3.css">
     <link type= "text/css" rel=stylesheet href="../_css/milligram.min.css">
     <link rel="stylesheet" href="../_css/tela-inicial-adm.css">
-    <?php include ('../_view/navbar-adm.php')?>
+    <?php include ('navbar-adm.php')?>
 
 </head>
 <body style="background-color:#606c76">
@@ -56,7 +56,7 @@
                         <td><?php echo $result[$i]->getEmail(); ?> &nbsp;</td>
                         <td><?php echo $result[$i]->getPrivilegio(); ?> &nbsp;</td>
                         <td>                        
-                            <form action="alterarprivilegio.php" method="post"><input value="<?php echo 'A%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Administrador&nbsp;
+                            <form action="../_controller/alterarprivilegio.php" method="post"><input value="<?php echo 'A%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Administrador&nbsp;
                             <input value="<?php echo 'M%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Moderador&nbsp;
                             <input value="<?php echo 'N%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Usuário&nbsp;
                             <input value="<?php echo 'B%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Banir&nbsp;
