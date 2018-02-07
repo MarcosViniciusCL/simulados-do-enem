@@ -7,7 +7,7 @@
     $tamanho 	= $_FILES["file"]["size"];
     $ext        = $ext = end( explode( '.', $nome ) );
 
-    $novo_nome = md5($nome).".".$ext;
+    $novo_nome = md5(microtime($nome)).".".$ext;
     move_uploaded_file($_FILES['file']['tmp_name'], $_UP['pasta'] . $novo_nome);
     echo $_UP['pasta'].$novo_nome;
 ?> 
