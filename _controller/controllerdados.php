@@ -17,6 +17,7 @@ require_once ("../_util/avaliacaodao.php");
 require_once ("../_util/denunciadao.php");
 require_once ("../_model/Denuncia.php");
 require_once ("../_model/Log.php");
+require_once ("../_util/provadao.php");
 
 /**
  * Class Controllerdados
@@ -627,13 +628,15 @@ class Controllerdados {
      * @param $ano
      */
     public function cadastraQuestao($enunciado, $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta, $areaconhecimento, $ano){
+
         $provadao = new ProvaDao();
         $q = $provadao->buscarProva($ano);
         $idprova = $q->getId();
+        //echo $idprova;
 
         $questaodao = new QuestaoDAO();
         $questao = new Questao(-1, $_SESSION['id'], $idprova, $areaconhecimento, $enunciado,"S", $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta);
-
+        print_r($questao);
         $questaodao->inserir($questao);
     }
 
