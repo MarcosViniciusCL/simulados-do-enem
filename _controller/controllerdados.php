@@ -530,7 +530,7 @@ class Controllerdados {
      * @return Denuncia
      */
     private function getDenuncia($escrever){
-        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1]);
+        $denuncia = new Denuncia($escrever[2],$escrever[4],$escrever[1], $escrever[5]);
         $denuncia->setId($escrever[0]);
         return $denuncia;
     }

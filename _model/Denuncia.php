@@ -12,18 +12,21 @@ class Denuncia
     private $idquestao;
     private $data;
     private $idusuario;
+    private $observacao;
 
     /**
      * Denuncia constructor.
-     * @param $questao
+     * @param $idquestao
      * @param $data
-     * @param $usuario
+     * @param $idusuario
+     * @param $observacao
      */
-    public function __construct($idquestao, $data, $idusuario)
+    public function __construct($idquestao, $data, $idusuario, $observacao)
     {
         $this->idquestao = $idquestao;
         $this->data = $data;
         $this->idusuario = $idusuario;
+        $this->observacao = $observacao;
     }
 
     /**
@@ -88,6 +91,22 @@ class Denuncia
     public function setIdUsuario($idusuario)
     {
         $this->idusuario = $idusuario;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getObservacao()
+    {
+        return $this->observacao;
+    }
+
+    /**
+     * @param mixed $observacao
+     */
+    public function setObservacao($observacao)
+    {
+        $this->observacao = $observacao;
     }
 
 

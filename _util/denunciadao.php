@@ -40,6 +40,7 @@ class denunciadao
 
         $idusuario = $denuncia->getIdUsuario();
         $idquestao = $denuncia->getIdQuestao;
+        
 
         $SQL = "INSERT INTO denunciaquestao (idusuario, idquestao, datadenuncia) VALUES ('$idusuario', '$idquestao')";
 
