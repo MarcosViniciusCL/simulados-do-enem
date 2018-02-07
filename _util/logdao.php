@@ -23,7 +23,7 @@ class LogDao {
 	//CREATE
 
     /**
-     * Método responsável por inserir um log no banco de dados
+     * Metodo responsavel por inserir um log no banco de dados
      * @param $iduser
      * @param $idacao
      * @param $descricao
@@ -57,7 +57,7 @@ class LogDao {
 
     /**
      * 0 - pesquisar por id do usuario; 1 - pesquisar por id da ação; 2 - pesquisar por id do log;
-     * Método responsável por fazer a leitura dos logs salvos no banco de dados
+     * Metodo responsavel por fazer a leitura dos logs salvos no banco de dados
      * @param $tipoleitura
      * @param $id
      * @return null|resource
@@ -91,7 +91,7 @@ class LogDao {
 	}
 
     /**
-     * Método responsável por buscar os logs do banco de dados
+     * Metodo responsavel por buscar os logs do banco de dados
      * @return bool|resource
      */
 	function buscarLogs(){
@@ -110,7 +110,7 @@ class LogDao {
     }
 
     /**
-     * Método responsável por buscar os logs no banco de dados de acordo com a data inicial e a data final selecionada
+     * Metodo responsavel por buscar os logs no banco de dados de acordo com a data inicial e a data final selecionada
      * @param $dataini
      * @param $datafim
      * @return bool|resource

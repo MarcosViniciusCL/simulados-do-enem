@@ -32,7 +32,7 @@ class denunciadao
     //CREATE
 
     /**
-     * Método responsável por inserir uma denúncia no banco de dados
+     * Metodo responsável por inserir uma denuncia no banco de dados
      * @param $denuncia
      * @return bool
      */
@@ -62,7 +62,7 @@ class denunciadao
     }
 
     /**
-     * Método responsável por buscar denúncias no banco de dados
+     * Metodo responsavel por buscar denuncias no banco de dados
      * @return bool|resource
      */
 

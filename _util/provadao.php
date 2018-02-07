@@ -7,9 +7,6 @@ require_once( "bd.php" );
  * Class ProvaDao
  */
 class ProvaDao {
-    /**
-     * @var
-     */
     private $banc;
 
     /**
@@ -23,17 +20,12 @@ class ProvaDao {
 	//CREATE
 
     /**
-     * Método responsável por inserir uma prova no banco de dados
+     * Metodo responsavel por inserir uma prova no banco de dados
      * @param $qtdquestoes
      * @param $ano
      * @return bool
      */
-    //
-    /**
-     * @param $qtdquestoes
-     * @param $ano
-     * @return bool
-     */
+
     function inserir($qtdquestoes, $ano ) {
 		/*$banco = $this -> conectar(); 
 		$Resultado = pg_query($this -> conectar(), $SQL); 
@@ -59,7 +51,7 @@ class ProvaDao {
 	}
 
 	/**
-     * Método responsável por buscar uma prova através do ano
+     * Metodo responsavel por buscar uma prova atraves do ano
      * @param $ano
      * @return prova
 	 */

@@ -9,7 +9,7 @@ class SimuladoDAO{
     }
 
     /**
-     * Método responsável de inserir um simulado realizado por um usuário no banco de dados
+     * Metodo responsavel de inserir um simulado realizado por um usuario no banco de dados
      * @param simulado
      * @return simulado
      */
@@ -34,7 +34,7 @@ class SimuladoDAO{
     }
 
     /**
-     * Método responsável de ler um simulado realizado por um usuário
+     * Metodo responsavel de ler um simulado realizado por um usuario
      * @param id_simulado
      * @return simulado
      */
@@ -52,7 +52,7 @@ class SimuladoDAO{
     }
 
     /**
-     * Método responsável de ler os simulados realizados pelos usuários
+     * Metodo responsavel de ler os simulados realizados pelos usuarios
      * @param id_usuario
      * @return simulado
      */
@@ -70,7 +70,7 @@ class SimuladoDAO{
         return $simulados;
     }
     /**
-     * Método responsável de atualizar um simulado
+     * Metodo responsavel de atualizar um simulado
      * @param simulado
      * @return simulado
      */

@@ -130,20 +130,33 @@ class Prova implements JsonSerializable
     }
 
 
+    /**
+     * @param $index
+     * @return mixed
+     */
     public function getQuestao($index) {
         $this->indexAtualQuest = $index-1;
         return $this->questoes[$this->indexAtualQuest];
     }
 
+    /**
+     * @return mixed
+     */
     public function getQuestaoAtual() {
         return $this->questoes[$this->indexAtualQuest];
     }
 
+    /**
+     *
+     */
     public function proximaQuestao() {
         $this->indexAtualQuest++;
         echo "alert(\"proximaQuestao\");";
     }
 
+    /**
+     *
+     */
     public function anteriorQuestao() {
         $this->indexAtualQuest--;
         

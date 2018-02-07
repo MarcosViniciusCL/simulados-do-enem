@@ -26,15 +26,24 @@ class Bd {
         }
         return self::$instance;
     }
-	//Método responsável por zerar a instância única do banco de dados
-	public static function zeraSingleton(){
+	//
+
+    /**
+     * Mwtodo responsavel por zerar a instancia unica do banco de dados
+     */
+    public static function zeraSingleton(){
 		fechaconexao();
 		
 		self::$instance = new Bd();
         
 	}
-	//Método responsável por abrir a conexão do banco de dados
-	function abrirconexao() {
+	//
+
+    /**
+     * Metodo responsavel por abrir a conexao do banco de dados
+     * @return resource
+     */
+    function abrirconexao() {
 		if($this->verificador == false){
 			if($this->banco){
 			 //echo "++Conexão com o PostgreSQL realizada com sucesso!!<br /><br />";
@@ -44,8 +53,12 @@ class Bd {
 			}
 		}
     }
-	//Método responsável por fechar a conexão do banco de dados
-	function fecharconexao(){
+
+    /**
+     * Mwtodo responsavel por fechar a conexao do banco de dados
+     * @return bool
+     */
+    function fecharconexao(){
 		if($this->verificador == true){
 			pg_close( $this->banco );
 		}else{
@@ -53,7 +66,10 @@ class Bd {
 		}
 	}
 
-	public function getBanco()
+    /**
+     * @return resource
+     */
+    public function getBanco()
     {
         return $this->banco;
     }
