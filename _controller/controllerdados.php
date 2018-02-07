@@ -58,6 +58,7 @@ class Controllerdados {
 	}
 
     /**
+     * Método responsável por cadastrar um usuário
      * @param $nome
      * @param $email
      * @param $senha
@@ -88,6 +89,7 @@ class Controllerdados {
 	}
 
     /**
+     * Método responsável por cadastrar um feedback
      * @param $iduser
      * @param $descricao
      * @param $titulo
@@ -150,6 +152,7 @@ class Controllerdados {
 	null ou 0 - login comum
 	*/
     /**
+     * Método responsável por realizar login
      * @param email
      * @param senha
      * @param protolo
@@ -204,7 +207,7 @@ class Controllerdados {
 	}
 
     /**
-     *
+     * Método responsável por realizar logout
      */
     public function realizalogout() {
 		if ( !isset( $_SESSION ) ) {
@@ -224,6 +227,7 @@ class Controllerdados {
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
 
     /**
+     * Método responsável por gerar uma prova
      * @param $tipo_prova
      * @param $ano_or_area
      * @param $quant_quest
@@ -255,6 +259,7 @@ class Controllerdados {
 	}
 
     /**
+     * Método responsável por finalizar um simulado
      * @param $id_simulado
      * @param $resposta_questoes
      * @param $tempo
@@ -271,6 +276,7 @@ class Controllerdados {
     }
 
     /**
+     * Método responsável por verificar um simulado
      * @param $id_usuario
      * @return null|Prova
      */
@@ -295,6 +301,7 @@ class Controllerdados {
     }
 
     /**
+     * Método responsável atualizar uma resposta de um simulado
      * @param $idQuetao
      * @param $resposta
      * @param $idSimulado
@@ -305,6 +312,7 @@ class Controllerdados {
     }
 
     /**
+     * Método responsável por obter resposta das questões
      * @param $idSimulado
      */
     public function obterRespostasQuestoes($idSimulado){
@@ -313,6 +321,7 @@ class Controllerdados {
     }
 
     /**
+     * Método responsável por gerar uma pontuação
      * @param $resp
      * @return int
      */

@@ -15,6 +15,7 @@ class RespostaSimuladoDAO {
     }
 
     /**
+     * Método responsável por inserir as respostas do simulado feito pelo usuário
      * @param $id_simulado
      * @param $vector_resp
      */
@@ -36,6 +37,7 @@ class RespostaSimuladoDAO {
     }
 
     /**
+     * Método responsável
      * @param $id_simulado
      * @param $vector_obj
      */
@@ -54,6 +56,7 @@ class RespostaSimuladoDAO {
     }
 
     /**
+     * Método responsável por atualizar as resposta do simulado feito por um usuário
      * @param $key
      * @param $value
      * @param $idsimulado
@@ -86,6 +89,7 @@ class RespostaSimuladoDAO {
     }
 
     /**
+     * Método responsável por retornar o id da questões de um determinado simulado
      * @param $id_simulado
      * @return array
      */
@@ -105,6 +109,7 @@ class RespostaSimuladoDAO {
     }
 
     /**
+     * Método responsável por obter id das questões e a resposta de um simulado
      * @param $idSimulado
      */
     public function obterRepostaQuestoes($idSimulado){

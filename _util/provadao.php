@@ -58,6 +58,11 @@ class ProvaDao {
 		}
 	}
 
+	/**
+     * Método responsável por buscar uma prova através do ano
+     * @param $ano
+     * @return prova
+	 */
 	function buscarProva($ano){
         $SQL = "SELECT * FROM prova where ano='$ano'";
         $banc = Bd::getInstance();
