@@ -65,8 +65,6 @@ class ProvaDao {
 	 */
 	function buscarProva($ano){
         $SQL = "SELECT * FROM prova where ano='$ano'";
-
-        echo 'aqui';
         $banc = Bd::getInstance();
         $obanco = $banc->abrirconexao();
 

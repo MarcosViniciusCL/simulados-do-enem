@@ -27,7 +27,7 @@ function buscarProva() {
         	setQuestoesProva(resposta.questoes);
             setTempo(resposta.dataprova, null);
             if(testeData(new Date(resposta.dataprova), new Date())){
-                alert("Já existe um simulado em andamento, você deve conclui para fazer um novo. Você será redirecionado para o simulado criado em " + resposta.dataprova);
+                alert("Já existe um simulado em andamento, você deve concluí-lo para fazer um novo. Você será redirecionado para o simulado criado em " + resposta.dataprova);
             }
         	setIndexAtual(0);
         	criarIndices(questoesProva.length); //Cria os indices das questoes de acordo com a quantidade.
@@ -206,7 +206,7 @@ function denuncia(){
   type: 'post',
   data: {idQuestao:idQuest}
   }).done(function (result) {
-      alert(result);
+      alert("Denúncia realizada com sucesso.");
   });
 }
 

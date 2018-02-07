@@ -14,6 +14,6 @@ $tipo_prova = $_GET['tipoProva'];
 $ano_or_area = $_GET['anoOrArea'];
 
 $controller = Controllerdados::getInstance();
-$prova = $controller->gerarProva($tipo_prova, $ano_or_area,3);
+$prova = $controller->gerarProva($tipo_prova, $ano_or_area,90);
 echo json_encode($prova);
 ?>
