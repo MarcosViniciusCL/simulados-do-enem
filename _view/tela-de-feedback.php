@@ -7,7 +7,7 @@ $result = $controller->buscarFeedback();
 $tamanho = count($result);
 //echo $tamanho;
 if($result==false){
-    echo "Erro, denúncias não foram encontradas.";
+    echo "Erro, feedback's não foram encontradas.";
 }else{
     //echo " ".$id;
 }
