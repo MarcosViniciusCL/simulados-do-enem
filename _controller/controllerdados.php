@@ -109,7 +109,6 @@ class Controllerdados {
 	}
 
     /**
-     * @param $idareaconhecimento
      * Método usado para cadastrar uma questão não oficial
      * @param $idusuario
      * @param $idprova
