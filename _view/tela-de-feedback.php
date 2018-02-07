@@ -25,39 +25,38 @@ if($result==false){
 
 </head>
 <body style="background-color:#606c76">
-<div class="container-fluid">
-    <div class="row">        
-        <div class="card col-md-12 col-lg-12 col-sm-12">
-            <div id="responsive">
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <th>Id Feedback</th>
-                        <th>Id Usuário</th>
-                        <th>Título Feed</th>
-                        <th>Conteúdo Feed</th>
-                    </tr>
-                    <?php
-                   
-                    while ($fetch = pg_fetch_row($result)) { ?>
+    <div class="container-fluid">
+        <div class="row">        
+            <div class="card col-md-12 col-lg-12 col-sm-12">
+                <div id="responsive">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
                         <tr>
-                            <td><?php echo $fetch[0]; ?> &nbsp;</td>
-                            <td><?php echo $fetch[1]; ?> &nbsp;</td>
-                            <td><?php echo $fetch[3]; ?> &nbsp;</td>
-                            <td><?php echo $fetch[2]; ?> &nbsp;</td>
-                           
-                            
+                            <th>Id Feedback</th>
+                            <th>Id Usuário</th>
+                            <th>Título do FeedBack</th>
+                            <th>Conteúdo do FeedBack</th>
                         </tr>
-                    <?php 
-                    }
-                    ?>
-                    <tbody>
-                </table>
-            </div>
+                        <?php
+                    
+                        while ($fetch = pg_fetch_row($result)) { ?>
+                            <tr>
+                                <td><?php echo $fetch[0]; ?> &nbsp;</td>
+                                <td><?php echo $fetch[1]; ?> &nbsp;</td>
+                                <td><?php echo $fetch[3]; ?> &nbsp;</td>
+                                <td><?php echo $fetch[2]; ?> &nbsp;</td>
+                            
+                                
+                            </tr>
+                        <?php 
+                        }
+                        ?>
+                        <tbody>
+                    </table>
+                </div>
+            </div>        
         </div>
-       
     </div>
-</div>
 
 </body>
 </html>
