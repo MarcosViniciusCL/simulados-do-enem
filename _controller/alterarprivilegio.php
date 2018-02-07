@@ -9,11 +9,14 @@ if ( ( isset( $_POST[ 'id' ] ) == false )and( isset( $_POST[ 'privilegio' ] ) ==
 	echo 'deu ruim';
 } else {
 
-	$id = $_POST[ 'id' ];
-	$privilegio = $_POST[ 'privilegio' ];
+	$dados = $_POST[ 'privilegio' ];
+	$split = explode('%', $dados);
+	$privilegio = $split[0];
+	$id = $split[1];
 	$controller = Controllerdados::getInstance();
 
 	$controller->alteraprivilegioUsuario($id, $privilegio);
+	header("location:../_view/tela-gerenciar-conta-usuario.php");
 }
 
 ?>

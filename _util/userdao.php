@@ -58,7 +58,7 @@ class UserDao {
 	function atualizar($atributo,$acao,$id) {
         $banc = Bd::getInstance();
         $banc->abrirconexao();
-        $SQL = "UPDATE FROM usuarios SET '$atributo' = '$acao' WHERE idusuario = '$id'";
+        $SQL = "UPDATE usuarios SET $atributo = '$acao' WHERE idusuario = '$id'";
         $resultado = pg_query($SQL);
         if(pg_num_rows($resultado)===0){
             return false;

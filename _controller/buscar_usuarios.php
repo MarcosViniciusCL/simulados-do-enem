@@ -56,11 +56,11 @@
                         <td><?php echo $result[$i]->getEmail(); ?> &nbsp;</td>
                         <td><?php echo $result[$i]->getPrivilegio(); ?> &nbsp;</td>
                         <td>                        
-                            <input name="tipoprivilegio" value="A" name = "privilegio" type="radio">Administrador&nbsp;
-                            <input name="tipoprivilegio" value="M" name = "privilegio" type="radio">Moderador&nbsp;
-                            <input name="tipoprivilegio" value="N" name = "privilegio" type="radio">Usuário&nbsp;
-                            <input name="tipoprivilegio" value="B" name = "privilegio" type="radio">Banir&nbsp;
-                            <button type="submit">Alterar</button>
+                            <form action="alterarprivilegio.php" method="post"><input value="<?php echo 'A%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Administrador&nbsp;
+                            <input value="<?php echo 'M%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Moderador&nbsp;
+                            <input value="<?php echo 'N%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Usuário&nbsp;
+                            <input value="<?php echo 'B%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Banir&nbsp;
+                            <button type="submit">Alterar</button></form>
                         </td>
                     </tr>
                     <?php $i++;
