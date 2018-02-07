@@ -9,6 +9,7 @@ class SimuladoDAO{
     }
 
     /**
+     * Método responsável de inserir um simulado realizado por um usuário no banco de dados
      * @param simulado
      * @return simulado
      */
@@ -31,7 +32,9 @@ class SimuladoDAO{
         //$simuladoBD = new Simulado($linha['idsimulado'], $linha['idusuario'], $linha['data_simulado'], $linha['tempo'], $linha['pontuacao'], $linha['tipo']);
         return $simulado;
     }
-/**
+
+    /**
+     * Método responsável de ler um simulado realizado por um usuário
      * @param id_simulado
      * @return simulado
      */
@@ -49,6 +52,7 @@ class SimuladoDAO{
     }
 
     /**
+     * Método responsável de ler os simulados realizados pelos usuários
      * @param id_usuario
      * @return simulado
      */
@@ -65,7 +69,8 @@ class SimuladoDAO{
         $banc->fecharconexao();
         return $simulados;
     }
-      /**
+    /**
+     * Método responsável de atualizar um simulado
      * @param simulado
      * @return simulado
      */

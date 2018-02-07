@@ -8,7 +8,11 @@ class DataHora {
         date_default_timezone_set("Brazil/East");
     }
 
-    //Retorna a hora do servidor NTP.
+    /**
+     * Método responsável por retornar a hora do servidor NTP
+     * @return datahora
+    */
+
     public function getDataHora(){
         /*$socket = fsockopen('udp://pool.ntp.br', 123, $err_no, $err_str, 1);
         if ($socket) {

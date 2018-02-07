@@ -15,6 +15,7 @@ class UserDao {
 	}
 
 	/**
+     * Método responsável por inserir usuário no banco de dados
      * @param user
      */
 	function inserir( $user ) {
@@ -50,6 +51,7 @@ class UserDao {
 	}
 
 	/**
+     * Método responsavel por atualizar o atributo de um usuário
      * @param atributo
      * @param acao
      * @param id
@@ -68,8 +70,10 @@ class UserDao {
 	}
 
 	/**
+     * Método responsável de ler de retornar dados do usuário a partir do e-mail e da senha
      * @param email
      * @param senha
+     * @return resultado
      */
 	function ler( $email, $senha ) {
 		$banc = Bd::getInstance();
@@ -104,6 +108,7 @@ class UserDao {
 	}
 	
 	/**
+     * Método responsável de buscar usuários a partir do nome e do id
      * @param nome
      * @param id
      * @return result
@@ -129,6 +134,7 @@ class UserDao {
 	}
 
 	/**
+     * Método responsável de buscar a pontuação do usuário
      * @param id
      * @param data
      * @return result
