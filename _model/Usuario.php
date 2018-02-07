@@ -37,28 +37,28 @@ class Usuario{
 	
 	
     /**
-     * @return mixed
+     * @return Nome
      */
     public function getNome(){
         return $this->nome;
     }
 
     /**
-     * @param mixed $nome
+     * @param $nome
      */
     public function setNome($nome){
         $this->nome = $nome;
     }
 
     /**
-     * @return mixed
+     * @return Sobrenome
      */
     public function getSobrenome(){
         return $this->Sobrenome;
     }
 
     /**
-     * @param mixed $Sobrenome
+     * @param $Sobrenome
      */
     public function setSobrenome($Sobrenome){
         $this->Sobrenome = $Sobrenome;
@@ -71,22 +71,36 @@ class Usuario{
         return $this->id;
     }
 	
+	/**
+     * @param mixed $id
+     */
 	public function setId($id){
 		$this->id = $id;
 	}
-
+	/**
+     * @return foto
+     */
     public function getFoto(){
 		return $this->foto;
 	}
 	
+	/**
+     * @param mixed $foto
+     */
 	public function setFoto($foto){
 		$this->foto = $foto;
 	}
 	
+	/**
+     * @return retorna o email de um usuário
+     */
 	public function getEmail(){
 		return $this->email;
 	}
 	
+	/**
+     * @param $email
+     */
 	public function setEmail($email){
 		$this->email = $email;
 	}
@@ -95,10 +109,16 @@ class Usuario{
 		return $this->dataplano;
 	}
 	
+	/**
+     * @param $dataplano
+     */
 	public function setDataplano($dataplano){
 		$this->dataplano = $dataplano;
 	}
 	
+	/**
+     * @return privilegio
+     */
 	public function getPrivilegio(){
 		return $this->privilegio;
 	}
@@ -107,10 +127,16 @@ class Usuario{
 		$this->privilegio = $privilegio;
 	}
 	
+     /**
+     * @return mixed senha
+     */
 	public function getSenha(){
 		return $this->senha;
 	}
 	
+	/**
+     * @param mixed $senha
+     */
 	public function setSenha($senha){
 		$this->senha = $senha;
 	}

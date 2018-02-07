@@ -14,7 +14,7 @@
     $tamanho = count($result);
     //echo $tamanho;
     if($result==false){
-        echo "Erro, usuários com o nome especificado não foram encontrados.";
+        echo ("<script>alert('Não foram encontrados Usuários com o nome especificado!!');</script>");
     }else{
         //echo " ".$id;
     }
@@ -56,11 +56,11 @@
                         <td><?php echo $result[$i]->getEmail(); ?> &nbsp;</td>
                         <td><?php echo $result[$i]->getPrivilegio(); ?> &nbsp;</td>
                         <td>                        
-                            <input name="tipoprivilegio" type="radio">Administrador&nbsp;
-                            <input name="tipoprivilegio" type="radio">Moderador&nbsp;
-                            <input name="tipoprivilegio" type="radio">Usuário&nbsp;
-                            <input name="tipoprivilegio" type="radio">Banir&nbsp;
-                            <button type="submit">Alterar</button>
+                            <form action="alterarprivilegio.php" method="post"><input value="<?php echo 'A%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Administrador&nbsp;
+                            <input value="<?php echo 'M%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Moderador&nbsp;
+                            <input value="<?php echo 'N%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Usuário&nbsp;
+                            <input value="<?php echo 'B%'.$result[$i]->getID(); ?>" name = "privilegio" type="radio">Banir&nbsp;
+                            <button type="submit">Alterar</button></form>
                         </td>
                     </tr>
                     <?php $i++;

@@ -71,9 +71,11 @@
                     <li>
                         <a href="tela-de-logs.php">Logs do Sistema</a>
                     </li>
+                   <!--
                     <li>
                         <a href="tela-de-ajuda.php">Ajuda</a>
                     </li>
+                    -->
                     <li>
                         <a href="tela-de-denuncias.php">Denúncias</a>
                     </li>

@@ -54,6 +54,26 @@ class FeedbackDao {
 		
 
 	}
+	
+	
+	/**
+     * Método responsável por buscar feedbacks no banco de dados
+     * @return bool|resource
+     */
+
+    function buscar(){
+        $SQL = "SELECT * FROM feedback";
+        $banco = Bd::getInstance();
+        $abrir = $banco->abrirconexao();
+        $resultado = pg_query($abrir,$SQL);
+        if(pg_num_rows($resultado)==0){
+            $banco->fecharconexao();
+            return false;
+        }else{
+            $banco->fecharconexao();
+            return $resultado;
+        }
+    }
 
 }
 

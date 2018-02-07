@@ -74,14 +74,14 @@ class Controllerdados {
 
 			$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
 
-			$dao = new UserDao();
+            $dao = new UserDao();
 			$verifica = $dao->inserir( $user );
 			if ( $verifica == true ) {
-				echo "deu certo";
+                echo ("<script>alert('Cadastrado realizado com sucesso!!');</script>");
+                $this->realizalogin( $email, $senha, 1 );
 			} else {
-				echo "deu errado";
+                echo ("<script>alert('Email já cadastrado'); location.href='../index.html';</script>");
 			}
-			$this->realizalogin( $email, $senha, 1 );
 
 		}
 	}
@@ -148,9 +148,14 @@ class Controllerdados {
 	1 - primeiro login
 	null ou 0 - login comum
 	*/
+    /**
+     * @param email
+     * @param senha
+     * @param protolo
+     */
 	public function realizalogin( $email, $senha, $protocolo ) {
 		$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
-		echo " a senha é " . $senhaCrip;
+		//echo " a senha é " . $senhaCrip;
 		$userdao = new UserDao();
 		$resultado = $userdao->ler( $email, $senhaCrip );
 
@@ -191,7 +196,7 @@ class Controllerdados {
 				header( 'location:../_view/erros/userbanido.html' );
 			}
 		} else {
-			echo "erro de senha ou email";
+			echo ("<script>alert('Falha no login. Verifique o email e/ou a senha!!'); location.href='../index.html';</script>");
 		}
 		//echo "erro";
 		//header( 'location:errologin.html' );
@@ -421,7 +426,6 @@ class Controllerdados {
         return $usuario;
     }
 
-
     /**
      * Método responsável por verificar o privilégio de um usuário do sistema
      * @param $id
@@ -623,23 +627,71 @@ class Controllerdados {
      * @param $ano
      */
     public function cadastraQuestao($enunciado, $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta, $areaconhecimento, $ano){
-		$senha =""; $email = "";
-    	$senhaCrip = crypt( $senha, '$6$rounds=5000$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$' );
+        $provadao = new ProvaDao();
+        $q = $provadao->buscarProva($ano);
+        $idprova = $q->getId();
 
-		$user = new Usuario( $nome, '', '', $email, '', 'N', $senhaCrip );
+        $questaodao = new QuestaoDAO();
+        $questao = new Questao(-1, $_SESSION['id'], $idprova, $areaconhecimento, $enunciado,"S", $questaoa, $questaob, $questaoc, $questaod, $questaoe, $questaocorreta);
 
-		$dao = new UserDao();
-		$verifica = $dao->inserir( $user );
-		if ( $verifica == true ) {
-			echo "deu certo";
-		} else {
-			echo "deu errado";
-		}
+        $questaodao->inserir($questao);
     }
+
+    /**
+     * @param id
+     * @param data
+     * @return resultado
+     */
     public function buscarPontuacao($id, $data){
         $dao = new UserDao();
         $resultado = $dao->buscarPontuacao($id, $data);
         return $resultado;
+    }
+	
+	/**
+	*@param id
+    * @param privilegio
+    * @return resultado
+	*/
+	 public function alteraprivilegioUsuario($id, $privilegio){
+        $userdao = new UserDao();
+        $result = $userdao->atualizar('privilegio', $privilegio, $id);
+        if($result === false){
+            return false;
+        }
+        $linha = pg_fetch_array($result);
+        return $linha['privilegio'];
+    }
+	
+	/**
+     * @param $escrever
+     * @return Denuncia
+     */
+    private function getFeedback($escrever){
+        $feedback = new Feedback($escrever[1],$escrever[2],$escrever[3]);
+        $feedback->setIdfeed($escrever[0]);
+        return $feedback;
+    }
+	
+	/**
+     * Método responsável por buscar todas os feedbacks
+     * @return array|bool
+     */
+    public function buscarFeedback(){
+        $feedbackdao = new FeedbackDao();
+        $result = $feedbackdao->buscar();
+        if($result==false){
+            return false;
+        }
+        $vetor = array();
+        $i = 0;
+        while($escrever=pg_fetch_array($result)){
+            $feed = $this->getDenuncia($escrever);
+            $vetor[$i] = $feed;
+            $i++;
+        }
+        return $vetor;
+
     }
 }
 ?>
