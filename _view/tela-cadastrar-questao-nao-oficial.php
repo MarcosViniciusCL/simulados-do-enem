@@ -1,5 +1,5 @@
 <?php
-include_once( "../_model/segurancaA.php" );
+include_once( "../_model/seguranca.php" );
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
