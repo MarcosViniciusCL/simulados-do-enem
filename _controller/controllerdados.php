@@ -38,7 +38,6 @@ class Controllerdados {
     private	function __construct() {
 
 	}
-
     /**
      * @return Controllerdados|null
      */
@@ -58,7 +57,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por cadastrar um usuário
+     * Metodo responsavel por cadastrar um usuario
      * @param $nome
      * @param $email
      * @param $senha
@@ -89,7 +88,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por cadastrar um feedback
+     * Metodo responsavel por cadastrar um feedback
      * @param $iduser
      * @param $descricao
      * @param $titulo
@@ -112,7 +111,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método usado para cadastrar uma questão não oficial
+     * Metodo usado para cadastrar uma questao nao oficial
      * @param $idusuario
      * @param $idprova
      * @param $idareaconhecimento
@@ -145,14 +144,13 @@ class Controllerdados {
 
 
     }
-
 	/**
-	Protocolo de aplicação
+	Protocolo de aplicacao
 	1 - primeiro login
 	null ou 0 - login comum
 	*/
     /**
-     * Método responsável por realizar login
+     * Metodo responsavel por realizar login
      * @param email
      * @param senha
      * @param protolo
@@ -207,7 +205,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por realizar logout
+     * Metodo responsavel por realizar logout
      */
     public function realizalogout() {
 		if ( !isset( $_SESSION ) ) {
@@ -227,7 +225,7 @@ class Controllerdados {
 	//OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
 
     /**
-     * Método responsável por gerar uma prova
+     * Metodo responsavel por gerar uma prova
      * @param $tipo_prova
      * @param $ano_or_area
      * @param $quant_quest
@@ -259,7 +257,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por finalizar um simulado
+     * Metodo responsavel por finalizar um simulado
      * @param $id_simulado
      * @param $resposta_questoes
      * @param $tempo
@@ -276,7 +274,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por verificar um simulado
+     * Metodo responsavel por verificar um simulado
      * @param $id_usuario
      * @return null|Prova
      */
@@ -301,7 +299,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável atualizar uma resposta de um simulado
+     * Metodo responsavel atualizar uma resposta de um simulado
      * @param $idQuetao
      * @param $resposta
      * @param $idSimulado
@@ -312,7 +310,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por obter resposta das questões
+     * Metodo responsavel por obter resposta das questoes
      * @param $idSimulado
      */
     public function obterRespostasQuestoes($idSimulado){
@@ -321,7 +319,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por gerar uma pontuação
+     * Metodo responsavel por gerar uma pontuacao
      * @param $resp
      * @return int
      */
@@ -346,7 +344,7 @@ class Controllerdados {
 
 
     /**
-     * Método resposável por avaliar a questão denunciada
+     * Metodo resposavel por avaliar a questao denunciada
      * @param $id_usuario
      * @param $id_questao
      * @param $avaliacao
@@ -359,7 +357,7 @@ class Controllerdados {
 
 
     /**
-     * Método responsável por transformar um usuário em "moderador"
+     * Metodo responsavel por transformar um usuario em "moderador"
      * @param $id
      * @return bool
      */
@@ -376,7 +374,7 @@ class Controllerdados {
 
 
     /**
-     * Método resposável por transformar um usuário em "administrador"
+     * Metodo resposavel por transformar um usuario em "administrador"
      * @param $id
      * @return bool
      */
@@ -391,7 +389,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por transformar em "normal" o priviçlégio de um usuário
+     * Metodo responsavel por transformar em "normal" o privilegio de um usuerio
      * @param $id
      * @return bool
      */
@@ -406,7 +404,7 @@ class Controllerdados {
 	}
 
     /**
-     * Método responsável por buscar usuários do sistema
+     * Metodo responsavel por buscar usuarios do sistema
      * @param $nome
      * @return array|bool
      */
@@ -437,7 +435,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por verificar o privilégio de um usuário do sistema
+     * Metodo responsavel por verificar o privilegio de um usuario do sistema
      * @param $id
      * @return bool
      */
@@ -452,7 +450,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por banir usuário do sistema
+     * Metodo responsavel por banir usuario do sistema
      * @param $id
      * @return bool
      */
@@ -467,17 +465,17 @@ class Controllerdados {
     }
 
 	/**
-	1 - cadastro de usuário
-	2 - promoção de usuário
-	3 - exclusão de usuário
-	4 - banimento de usuário
-	5 - submissão de questão
-	6 - realização de simulado
-	7 - inserção de prova oficial
+	1 - cadastro de usuario
+	2 - promocao de usuario
+	3 - exclusao de usuario
+	4 - banimento de usuario
+	5 - submissao de questao
+	6 - realizacao de simulado
+	7 - insercao de prova oficial
 	*/
 
     /**
-     * Método responsável por inserir log no sistema
+     * Metodo responsavel por inserir log no sistema
      * @param $tipo
      * @param $idusuario
      * @param $descricao
@@ -497,7 +495,7 @@ class Controllerdados {
 
 
     /**
-     * Método responsável por inserir uma denúncia no sistema
+     * Metodo responsavel por inserir uma denuncia no sistema
      * @param $idquestao
      * @param $idusuario
      * @param $data
@@ -515,7 +513,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por buscar todas as denúncias
+     * Metodo responsavel por buscar todas as denuncias
      * @return array|bool
      */
     public function buscarDenuncia(){
@@ -546,7 +544,7 @@ class Controllerdados {
     }
 
     /**
-     * Método responsável por cadastrar prova oficial
+     * Metodo responsavel por cadastrar prova oficial
      * @param $qtdQuestoes
      * @param $idUser
      * @param $ano
@@ -562,7 +560,7 @@ class Controllerdados {
 
 
     /**
-     * Método responsável por buscar todos os logs do sistema
+     * Metodo responsavel por buscar todos os logs do sistema
      * @return array|bool
      */
     public function buscarLog(){
@@ -592,7 +590,7 @@ class Controllerdados {
 
 
     /**
-     * Método responsável por fazer a busca de logs do sistema de acordo com a data selecionada
+     * Metodo responsavel por fazer a busca de logs do sistema de acordo com a data selecionada
      * @param $dataini
      * @param $datafim
      * @return array|bool
@@ -614,18 +612,7 @@ class Controllerdados {
 	}
 
     /**
-     * @param $enunciado
-     * @param $questaoa
-     * @param $questaob
-     * @param $questaoc
-     * @param $questaod
-     * @param $questaoe
-     * @param $questaocorreta
-     * @param $areaconhecimento
-     * @param $ano
-     */
-    //Método responsável pelo cadastro de questão
-    /**
+     * Metodo responsavel pelo cadastro de questao
      * @param $enunciado
      * @param $questaoa
      * @param $questaob
@@ -661,7 +648,7 @@ class Controllerdados {
     }
 	
 	/**
-	*@param id
+	* @param id
     * @param privilegio
     * @return resultado
 	*/
@@ -686,7 +673,7 @@ class Controllerdados {
     }
 	
 	/**
-     * Método responsável por buscar todas os feedbacks
+     * Metodo responsavel por buscar todas os feedbacks
      * @return array|bool
      */
     public function buscarFeedback(){

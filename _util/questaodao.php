@@ -13,7 +13,7 @@ require_once( "../_model/Questao.php" );
 		}
 
         /**
-		 * Método responsável por inserir uma questão no banco de dados
+		 * Metodo responsavel por inserir uma questao no banco de dados
          * @param $questao
          * @return bool
          */
@@ -39,8 +39,8 @@ require_once( "../_model/Questao.php" );
 			$banc->fecharconexao();
 		}
         /**
-		 * Método responsável por ler questões do banco de dados
-		 * OBS.: tipo_prova: 1 - Edição anteriores, 2 - Áreas especificas, 3 - Questões oficiais, 4 - Questões não oficiais, 5 - Questões mistas
+		 * Metodo responsavel por ler questoes do banco de dados
+		 * OBS.: tipo_prova: 1 - Edicao anteriores, 2 - Areas especificas, 3 - Questoes oficiais, 4 - Questoes nao oficiais, 5 - Questoes mistas
          * @param $tipo_prova
          * @param $ano_or_area
          * @param $quant_quest
@@ -73,7 +73,7 @@ require_once( "../_model/Questao.php" );
         }
 
         /**
-		 * Método responsável por ler questões através de um vetor com índices
+		 * Metodo responsavel por ler questoes atraves de um vetor com indices
          * @param $vetor_id_questoes
          * @return array
          */
@@ -93,7 +93,7 @@ require_once( "../_model/Questao.php" );
 		}
 
         /**
-		 * Método que lê uma questão dado um índice
+		 * Metodo que le uma questao dado um indice
          * @param $index
          * @return Questao
          */

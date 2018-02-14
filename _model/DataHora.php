@@ -9,7 +9,7 @@ class DataHora {
     }
 
     /**
-     * Método responsável por retornar a hora do servidor NTP
+     * Metodo responsavel por retornar a hora do servidor NTP
      * @return datahora
     */
 

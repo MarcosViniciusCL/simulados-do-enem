@@ -8,10 +8,11 @@ class AvaliacaoDAO {
 		# code...
 	}
    /**
-     * @param $id_usuario
-     * @param id_questao
-     * @param avaliacao
-     */
+    * Metodo responsavel por inserir avaliacao no banco de dados
+    * @param $id_usuario
+    * @param id_questao
+    * @param avaliacao
+    */
 	public function inserirAvaliacao($id_usuario, $id_questao, $avaliacao){
          $banc = Bd::getInstance();
          $obanco = $banc->abrirconexao();
