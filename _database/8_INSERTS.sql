@@ -8,12 +8,12 @@
 --Isso deixará no formato "Dia/Mês/Ano"
 
 --Cadastro de tipos de log
-insert into tipodelog (idacao, nome) values ('1', 'cadastro de usuário');
-insert into tipodelog (idacao, nome) values ('2', 'promoção de usuário');
-insert into tipodelog (idacao, nome) values ('3', 'exclusão de usuário');
-insert into tipodelog (idacao, nome) values ('4', 'banimento de usuário');
-insert into tipodelog (idacao, nome) values ('5', 'submissão de questão');
-insert into tipodelog (idacao, nome) values ('6', 'realização de simulado');
+insert into tipodelog (idacao, nome) values ('1', 'cadastro de usu�rio');
+insert into tipodelog (idacao, nome) values ('2', 'promo��o de usu�rio');
+insert into tipodelog (idacao, nome) values ('3', 'exclus�o de usu�rio');
+insert into tipodelog (idacao, nome) values ('4', 'banimento de usu�rio');
+insert into tipodelog (idacao, nome) values ('5', 'submiss�o de quest�o');
+insert into tipodelog (idacao, nome) values ('6', 'realiza��o de simulado');
 insert into tipodelog (idacao, nome) values ('7', 'cadastro de prova');
 
 --Cadastro de usuários
