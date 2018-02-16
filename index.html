@@ -1,129 +1,168 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+
+<html class="no-js" lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>S.O.S. ENEM</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap4.css">
-    <link rel="stylesheet" type="text/css" href="_css/index.css">
+
+    <link rel="stylesheet" href="_css/navmenu/styles.css">
+
+    <link rel="stylesheet" href="_fonts/stylesheet.css">
+
+    <link rel="stylesheet" href="_css/style3.css">
+
+    <link rel="stylesheet" href="_css/responsive.css" />
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="_css/style2.css">
 </head>
 
-<body>
-    <nav id="principal" class="navbar navbar-expand-lg navbar-dark navbar-expand-md  justify-content-center">
-        <a class="navbar-brand" href="#">S.O.S ENEM</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
-        </button>
+    <nav>
+        <div class="container">
+            <div class="nav-top clearfix">
+                <div class="logo">
+                    <a href="" class="navbar-brand"><img style="margin-top: -50px" src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png"></a>
+                </div>
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul id="botoes-nav" class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Pagina Inicial
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nossos-planos.html">Nossos Planos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato.html">Contato</a>
-                </li>
-            </ul>
+                <div class="head_top_social pull-right">
+                    <ul class="list-inline">
+                        <li style="color:brown">SOFTWORK SOLUÇÕES & CONSULTORIA</li>
+
+
+                    </ul>
+                </div>
+
+                <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                        <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                    </button>
+
+            </div>
         </div>
-    </nav>
 
-    <div class="container-fluid">
+        <div class="main-nav navbar-collapse collapse">
+            <div class="container">
+                <div class="minilogo">
+                    <a href="" class="navbar-brand"><img style="margin-top: -40px" src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png"></a>
+                </div>
+                <ul class="nav nav-justified">
+                    <li><a class="nav-link" href="index.html">Pagina Inicial</a></li>
+                    <!--<li><a class="nav-link" href="nossos-planos.html">Nossos Planos</a></li>-->
+                    <li> <a class="nav-link" href="contato.html">Contato</a></li>
 
-        <div class="row justify-content-center">
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="col-md-4 col-lg-4"></div>
+            <div class="col-lg-4 col-md-4">
+                <div class=" col-md-offset-2 col-lg-offset-2 col-md-2 col-lg-2">
+                    <button type="button" class="btn btn-danger" onclick="mostraOculta('areatexto','cadastro')">ENTRAR</button>
+                </div>
+                <div class="col-md-2 col-lg-2">
 
-            <div id="list-plano1" class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12">
-
-                <div class="conteudo">
-                    <div id="texto">
-                        <h2>Notícias</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum totam et dolores voluptatem porro tempore temporibus ducimus ipsam, placeat amet, suscipit. Excepturi, dolore! Beatae rem laudantium fugit quibusdam natus veritatis.
-                        </p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi qui, ea, sed exercitationem unde molestiae. Ullam cumque odit magnam dolores non fugit animi amet deleniti nulla dignissimos, temporibus aut fuga.</p>
-
-                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <button type="button" class="btn btn-danger" onclick="mostraOculta('cadastro','areatexto')">CADASTRAR</button>
                 </div>
 
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-3"></div>
-            <div id="list-plano" class="col-lg-4  col-md-4  col-sm-9">
-                <div id="areaLogin">
-                    <div id="geral">
-                        <div>
-                            <div class="btn-comum">
-                                <ul>
-                                    <li id="ca">
-                                        <a href="#" onclick="mostraOculta('cadastro','areatexto')">Cadastrar</a>
-                                    </li>
-                                    <li id="en">
-                                        <a href="#" onclick="mostraOculta('areatexto','cadastro')">&nbsp; Entrar &nbsp;</a>
-                                    </li>
-                                </ul>
+            <div class="col-md-4 col-lg-4"></div>
+        </div>
 
-                            </div>
-                            <div id="areatexto">
-                                <form method="POST" action="_controller/login.php" id="formulario-login">
-                                    <div id="dados">
-                                        <ul id="dados-para-email">
-                                            <li>
-                                                <input type="email" name="email" required placeholder="Digite seu email">
-                                            </li>
-                                            <li>
-                                                <input type="password" name="senha" required placeholder="Digite sua senha">
-                                            </li>
-                                            <li id="botao">
-                                                <button type="submit">Entrar</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <div id="cadastro">
-                                <form id="formulario-cadastro" method="POST" action="_controller/cadastro.php">
-                                    <div id="dados">
-                                        <ul id="dados-para-email">
-                                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-                                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
-                                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
-                                            <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required>
-                                            <div id="botaoCad">
-                                                <button type="submmit">Cadastrar</button>
-                                            </div>
-                                        </ul>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="login-rede">
-                                <ul>
-                                    <li id="go">
-                                        <a href="https://www.gmail.com" target="_blanck">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrar com Google</a>
-                                    </li>
-                                    <li id="fa">
-                                        <a href="https://www.facebook.com" target="_blanck">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrar com Facebook</a>
-                                    </li>
-                                </ul>
+        <div class="col-md-offset-4 col-lg-offset-4">
+            <div id="areatexto" class="col-md-6 col-lg-6">
+                <div class="form">
+                    <h1>BEM VINDO!</h1>
+                    <form method="POST" action="_controller/login.php" id="formulario-login">>
+                        <div class="field-wrap">
+                            <div class="form-group input-group"><span id="basic-addon1" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="email" name="email" require placeholder="Digite Seu Email" aria-describedby="basic-addon1" class="form-control" />
                             </div>
                         </div>
-                    </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group"><span id="basic-addon2" class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" name="senha" required placeholder="Digite sua senha" aria-describedby="basic-addon2" autocomplete="off" class="form-control" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger button button-block">ENTRAR</button>
+                    </form>
+                </div>
+            </div>
+            <div id="cadastro" class="col-md-6 col-lg-6">
+                <div class="form">
+                    <h1>CADASTRE-SE!</h1>
+                    <form id="formulario-cadastro" method="POST" action="_controller/cadastro.php">
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tags"></span></span>
+                                <input type="text" id="nome" name="nome" required class="form-control" placeholder="Nome Completo *" aria-describedby="basic-addon1">
+
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+
+                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+                                <input type="email" id="email" name="email" required class="form-control" placeholder="E-Mail *" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" id="senha" name="senha" class="form-control" required placeholder="Senha *" aria-describedby="basic-addon2" , autocomplete='off'>
+
+                                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" id="confirmSenha" name="confirmSenha" class="form-control" required placeholder="Comfirme Senha *" aria-describedby="basic-addon2" , autocomplete='off'>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger button button-block">CADASTRAR</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+
+    </nav>
+
+
+    <section id="home" class="home text-right">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="_js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="_js/vendor/bootstrap.min.js"></script>
+
+    <!-- START SCROLL TO TOP  -->
+
 
     <script language="JavaScript" src="_js/popper.min.js"></script>
     <script type="text/javascript" src="_js/validaCadastro.js"></script>
     <script type="text/javascript" src="_js/script.js"></script>
+
+    <script src="_js/script.js"></script>
+
 
 </body>
 
