@@ -1,0 +1,192 @@
+@charset "UTF-8";
+#navbarSupportedContent {
+    margin-left: 30%;
+}
+
+#principal {
+    /*background-color: rgb(192, 224, 226);*/
+    /* background-color:#563d7c;*/
+    background-color: rgba(99, 99, 99, .8);
+    font-style: none;
+}
+
+h2,
+.nav-brand {
+    color: #FFFFFF;
+}
+
+#teste {
+    margin-top: 10px;
+}
+
+#botoes-nav {
+    font-size: 20px;
+    list-style: none;
+}
+
+.nav-item {
+    border: 1px solid #FDFDFD;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+.nav-item a {
+    color: #FDFDFD;
+    background-color: rgba(99, 99, 99, .4);
+    border-radius: 5px;
+    padding: 2px 4px;
+}
+
+.nav-item a:hover {
+    background-color: #8FFFBD;
+    color: #404040;
+}
+
+#tour {
+    margin-top: 10%;
+    padding-top: 14px;
+}
+
+body {
+    background-image: url(../_images/1511614929708aed32fdbbb2edc2f40025aa8d4f61.jpg);
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    color: #FFFFFF;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+
+#areaLogin {
+    display: inline-block;
+    min-height: 1px;
+    margin: auto;
+    position: absolute;
+}
+
+.login-rede ul {
+    list-style: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.btn-comum ul {
+    list-style: none;
+    font-family: Helvetica, sans-serif;
+    font-size: 22px;
+    margin-top: 15%;
+}
+
+.hidden {
+    display: none;
+}
+
+#botaoCad {
+    margin-top: 5px;
+}
+
+#botaoCad button {
+    border-radius: 5px;
+    font-size: 1.6vw;
+    background-color: #FAFAFA;
+}
+
+#botaoCad button:hover {
+    background-color: #8FFFBD;
+}
+
+#areatexto ul,
+#cadastro ul {
+    list-style: none;
+}
+
+#areatexto,
+#cadastro {
+    display: none;
+}
+
+#botao {
+    margin-top: 5px;
+}
+
+#botao button {
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #FAFAFA;
+}
+
+#botao button:hover {
+    background-color: #8FFFBD;
+}
+
+#dados-para-email input {
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    width: 260px;
+}
+
+.login-rede ul li {
+    display: block;
+    padding: 5px 8px;
+    margin-left: 0%;
+    transition: 0.4s;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.btn-comum ul li {
+    display: inline-block;
+    padding: 5px 17px;
+    margin-left: 0%;
+    transition: 0.4s;
+    background-color: #FAFAFA;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.btn-comum ul li a {
+    text-decoration: none;
+    color: #404040;
+}
+
+#ca:hover,
+#en:hover {
+    background-color: #8FFFBD;
+}
+
+li#fa {
+    background-color: rgb(14, 73, 182);
+    margin-top: 5px;
+    padding: 5px 8px;
+    width: 260px;
+}
+
+li#go {
+    background-color: #C11302;
+    margin-top: 5px;
+    padding: 5px 8px;
+    width: 260px;
+}
+
+.login-rede ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+li#fa:hover {
+    background-color: #0105B1;
+}
+
+li#go:hover {
+    background-color: #B10902;
+}
+
+#list-plano,
+#list-plano1 {
+    margin-top: 8%;
+}

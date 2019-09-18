@@ -1,0 +1,34 @@
+@charset "UTF-8";
+#tour {
+    padding-top: 14px;
+    /*background-color: rgba(99,99,99,.2); */
+}
+
+#coluna1,
+#coluna2,
+#coluna3 {
+    border-right: 1px solid;
+    border-color: #FFFFFF;
+}
+
+#coluna2,
+#coluna3 {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #ffffff;
+}
+
+#coluna2 {
+    border-left: 1px solid;
+    border-color: #ffffff;
+}
+
+.btn-danger {
+    padding: 2px, 8px;
+}
+
+p {
+    color: #FFFFFF;
+    font-family: Lato, sans-serif;
+    font-size: 18px;
+}

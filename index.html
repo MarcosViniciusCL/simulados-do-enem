@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>S.O.S. ENEM</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="_css/navmenu/styles.css">
+
+    <link rel="stylesheet" href="_fonts/stylesheet.css">
+
+    <link rel="stylesheet" href="_css/style3.css">
+
+    <link rel="stylesheet" href="_css/responsive.css" />
+
+
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="_css/style2.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar-collapse">
+
+    <nav>
+        <div class="container">
+            <div class="nav-top clearfix">
+                <div class="logo">
+                    <a href="" class="navbar-brand"><img style="margin-top: -50px" src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png"></a>
+                </div>
+
+                <div class="head_top_social pull-right">
+                    <ul class="list-inline">
+                        <li style="color:brown">SOFTWORK SOLUÇÕES & CONSULTORIA</li>
+
+
+                    </ul>
+                </div>
+
+                <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                        <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                    </button>
+
+            </div>
+        </div>
+
+        <div class="main-nav navbar-collapse collapse">
+            <div class="container">
+                <div class="minilogo">
+                    <a href="" class="navbar-brand"><img style="margin-top: -40px" src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png"></a>
+                </div>
+                <ul class="nav nav-justified">
+                    <li><a class="nav-link" href="index.html">Pagina Inicial</a></li>
+                    <!--<li><a class="nav-link" href="nossos-planos.html">Nossos Planos</a></li>-->
+                    <li> <a class="nav-link" href="contato.html">Contato</a></li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12">
+            <div class="col-md-4 col-lg-4"></div>
+            <div class="col-lg-4 col-md-4">
+                <div class=" col-md-offset-2 col-lg-offset-2 col-md-2 col-lg-2">
+                    <button type="button" class="btn btn-danger" onclick="mostraOculta('areatexto','cadastro')">ENTRAR</button>
+                </div>
+                <div class="col-md-2 col-lg-2">
+
+                </div>
+                <div class="col-md-2 col-lg-2">
+                    <button type="button" class="btn btn-danger" onclick="mostraOculta('cadastro','areatexto')">CADASTRAR</button>
+                </div>
+
+            </div>
+            <div class="col-md-4 col-lg-4"></div>
+        </div>
+
+        <div class="col-md-offset-4 col-lg-offset-4">
+            <div id="areatexto" class="col-md-6 col-lg-6">
+                <div class="form">
+                    <h1>BEM VINDO!</h1>
+                    <form method="POST" action="_controller/login.php" id="formulario-login">>
+                        <div class="field-wrap">
+                            <div class="form-group input-group"><span id="basic-addon1" class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <input type="email" name="email" require placeholder="Digite Seu Email" aria-describedby="basic-addon1" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group"><span id="basic-addon2" class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" name="senha" required placeholder="Digite sua senha" aria-describedby="basic-addon2" autocomplete="off" class="form-control" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger button button-block">ENTRAR</button>
+                    </form>
+                </div>
+            </div>
+            <div id="cadastro" class="col-md-6 col-lg-6">
+                <div class="form">
+                    <h1>CADASTRE-SE!</h1>
+                    <form id="formulario-cadastro" method="POST" action="_controller/cadastro.php">
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tags"></span></span>
+                                <input type="text" id="nome" name="nome" required class="form-control" placeholder="Nome Completo *" aria-describedby="basic-addon1">
+
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+
+                                <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
+                                <input type="email" id="email" name="email" required class="form-control" placeholder="E-Mail *" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <div class="form-group input-group">
+                                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" id="senha" name="senha" class="form-control" required placeholder="Senha *" aria-describedby="basic-addon2" , autocomplete='off'>
+
+                                <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"></span></span>
+                                <input type="password" id="confirmSenha" name="confirmSenha" class="form-control" required placeholder="Comfirme Senha *" aria-describedby="basic-addon2" , autocomplete='off'>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger button button-block">CADASTRAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <section id="home" class="home text-right">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="_js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="_js/vendor/bootstrap.min.js"></script>
+
+    <!-- START SCROLL TO TOP  -->
+
+
+    <script language="JavaScript" src="_js/popper.min.js"></script>
+    <script type="text/javascript" src="_js/validaCadastro.js"></script>
+    <script type="text/javascript" src="_js/script.js"></script>
+
+    <script src="_js/script.js"></script>
+
+
+</body>
+
+</html>

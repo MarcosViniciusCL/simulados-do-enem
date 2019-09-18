@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>S.O.S. ENEM</title>
+
+    <link rel="stylesheet" type="text/css" href="_css/bootstrap/css/bootstrap4.css">
+    <link rel="stylesheet" type="text/css" href="_css/index.css">
+</head>
+
+<body>
+    <nav id="principal" class="navbar navbar-expand-lg navbar-dark navbar-expand-md  justify-content-center">
+        <a class="navbar-brand" href="#">S.O.S ENEM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul id="botoes-nav" class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Pagina Inicial
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nossos-planos.html">Nossos Planos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato.html">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+
+            <div id="list-plano1" class="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-12">
+
+                <div class="conteudo">
+                    <div id="texto">
+                        <img width="400" src="_images/40abf4f8-b64d-4c79-8e17-7c377a3554db.png">
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-3"></div>
+            <div id="list-plano" class="col-lg-4  col-md-4  col-sm-9">
+                <div id="areaLogin">
+                    <div id="geral">
+                        <div>
+                            <div class="btn-comum">
+                                <ul>
+                                    <li id="ca">
+                                        <a href="#" onclick="mostraOculta('cadastro','areatexto')">Cadastrar</a>
+                                    </li>
+                                    <li id="en">
+                                        <a href="#" onclick="mostraOculta('areatexto','cadastro')">&nbsp; Entrar &nbsp;</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div id="areatexto">
+                                <form method="POST" action="_controller/login.php" id="formulario-login">
+                                    <div id="dados">
+                                        <ul id="dados-para-email">
+                                            <li>
+                                                <input type="email" name="email" required placeholder="Digite seu email">
+                                            </li>
+                                            <li>
+                                                <input type="password" name="senha" required placeholder="Digite sua senha">
+                                            </li>
+                                            <li id="botao">
+                                                <button type="submit">Entrar</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div id="cadastro">
+                                <form id="formulario-cadastro" method="POST" action="_controller/cadastro.php">
+                                    <div id="dados">
+                                        <ul id="dados-para-email">
+                                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                                            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                                            <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required>
+                                            <div id="botaoCad">
+                                                <button type="submmit">Cadastrar</button>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="login-rede">
+                                <ul>
+                                    <li id="go">
+                                        <a href="https://www.gmail.com" target="_blanck">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrar com Google</a>
+                                    </li>
+                                    <li id="fa">
+                                        <a href="https://www.facebook.com" target="_blanck">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Entrar com Facebook</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script language="JavaScript" src="_js/popper.min.js"></script>
+    <script type="text/javascript" src="_js/validaCadastro.js"></script>
+    <script type="text/javascript" src="_js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.navbar{
+    width: 100%;
+}
+.navbar object{
+    width: 100%;
+
+}
+.container-fluid{
+    padding: 0px;
+}
